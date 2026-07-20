@@ -136,8 +136,6 @@ function renderPageChrome(data) {
 function renderHero(data) {
   const { site, hero } = data;
   return `<section class="hero section" id="home">
-        <div class="eyebrow reveal"><span class="eyebrow-dot"></span>${localizedInline(site.role)}</div>
-
         <h1 class="hero-title reveal">
           <span class="lang-en">${escapeHtml(hero.greeting.en)}<span class="wave" aria-hidden="true">👋</span></span>
           <span class="lang-zh">${escapeHtml(hero.greeting.zh)}<span class="wave" aria-hidden="true">👋</span></span>
