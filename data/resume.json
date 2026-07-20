@@ -65,90 +65,22 @@
           "zh": "曾在 Hulu 与百度从事推荐基础设施和算法研发。"
         }
       }
-    ],
-    "metrics": [
-      {
-        "value": "87%+",
-        "label": {
-          "en": "SOL achieved by a production HSTU kernel",
-          "zh": "HSTU 核心 Kernel 达到的 SOL"
-        }
-      },
-      {
-        "value": "20M+",
-        "label": {
-          "en": "users served by Hulu's sports recommendation platform",
-          "zh": "Hulu 体育推荐平台覆盖用户"
-        }
-      },
-      {
-        "value": "40",
-        "label": {
-          "en": "production machines removed through system refactoring",
-          "zh": "通过架构重构节省线上机器"
-        }
-      },
-      {
-        "value": "2",
-        "label": {
-          "en": "peer-reviewed papers in model efficiency and vision",
-          "zh": "模型效率与视觉方向论文"
-        }
-      }
     ]
   },
-  "focus": [
-    {
-      "icon": "chip",
-      "color": "amber",
-      "title": {
-        "en": "GPU kernels",
-        "zh": "GPU Kernel"
-      },
-      "description": {
-        "en": "CUDA and CUTLASS kernels tuned around real model shapes, memory behavior, and hardware limits.",
-        "zh": "围绕真实模型形状、访存行为与硬件极限进行 CUDA/CUTLASS Kernel 优化。"
-      },
-      "tags": ["CUDA", "CUTLASS", "Profiling"]
-    },
-    {
-      "icon": "cube",
-      "color": "blue",
-      "title": {
-        "en": "Generative recommendation",
-        "zh": "生成式推荐"
-      },
-      "description": {
-        "en": "Training and inference acceleration for long-sequence, large-scale recommendation models.",
-        "zh": "面向长序列、大规模生成式推荐模型的训练与推理加速。"
-      },
-      "tags": ["OneRec", "HSTU", "PyTorch"]
-    },
-    {
-      "icon": "search",
-      "color": "green",
-      "title": {
-        "en": "AI systems at scale",
-        "zh": "大规模 AI 系统"
-      },
-      "description": {
-        "en": "Production retrieval, distributed training, data platforms, and end-to-end bottleneck analysis.",
-        "zh": "生产级向量检索、分布式训练、数据平台与端到端瓶颈分析。"
-      },
-      "tags": ["RAFT/cuVS", "Megatron", "Spark"]
-    }
-  ],
   "work": [
     {
       "company": "NVIDIA",
-      "meta": "DevTech · 2023—Now",
+      "meta": {
+        "en": "Senior Software Engineer · DevTech · Aug 2023—Now",
+        "zh": "高级软件开发工程师 · DevTech · 2023.08—至今"
+      },
       "logo": "assets/logos/nvidia-mark.svg",
       "logoKey": "nvidia",
       "layout": "grid",
       "projects": [
         {
           "featured": true,
-          "years": "2025—2026",
+          "years": "2025.10—2026.03",
           "role": "Tech Lead",
           "title": {
             "en": "OneRec end-to-end training",
@@ -178,7 +110,7 @@
           }
         },
         {
-          "years": "2024—2025",
+          "years": "2024.03—2024.12",
           "role": "Tech Lead",
           "title": {
             "en": "High-performance HSTU kernels",
@@ -208,7 +140,7 @@
           }
         },
         {
-          "years": "2023—2024",
+          "years": "2023.08—2023.12",
           "role": "Tech Lead",
           "title": {
             "en": "GPU-native ANN search",
@@ -241,7 +173,10 @@
     },
     {
       "company": "Hulu / Disney Streaming",
-      "meta": "Data · 2022—2023",
+      "meta": {
+        "en": "Senior Software Engineer · Data · Aug 2022—Aug 2023",
+        "zh": "高级软件开发工程师 · Data · 2022.08—2023.08"
+      },
       "logo": "assets/logos/hulu.svg",
       "logoKey": "hulu",
       "layout": "wide",
@@ -268,7 +203,10 @@
     },
     {
       "company": "Baidu",
-      "meta": "Feed Recommendation · 2021—2022",
+      "meta": {
+        "en": "Recommendation Algorithm Engineer · Feed · Jul 2021—Aug 2022",
+        "zh": "推荐算法工程师 · Feed · 2021.07—2022.08"
+      },
       "logo": "assets/logos/baidu-mark.svg",
       "logoKey": "baidu",
       "layout": "wide",
@@ -279,8 +217,8 @@
             "zh": "推荐算法工程师"
           },
           "title": {
-            "en": "Feed recall and traffic distribution",
-            "zh": "信息流召回与流量分发"
+            "en": "Implicit quality scoring and traffic distribution",
+            "zh": "隐式质量度体系与流量阶梯分发"
           },
           "description": {
             "en": "Developed graph-based ICF/UCF recall and refactored cold-start serving paths for Baidu Feed's multi-stage traffic distribution system.",
@@ -295,83 +233,48 @@
           }
         }
       ]
-    }
-  ],
-  "experience": [
-    {
-      "date": {
-        "en": "Aug 2023—Now",
-        "zh": "2023.08—至今"
-      },
-      "company": "NVIDIA",
-      "logo": "assets/logos/nvidia-mark.svg",
-      "logoKey": "nvidia",
-      "role": {
-        "en": "Senior Software Engineer · DevTech",
-        "zh": "高级软件开发工程师 · DevTech"
-      },
-      "description": {
-        "en": "GPU acceleration for recommendation, search, LLM/MoE, and large-scale data workloads.",
-        "zh": "负责搜广推、LLM/MoE 与大数据业务的 GPU 加速和性能工程。"
-      }
     },
     {
-      "date": "Aug 2022—Aug 2023",
-      "company": "Hulu / Disney Streaming",
-      "logo": "assets/logos/hulu.svg",
-      "logoKey": "hulu",
-      "role": {
-        "en": "Senior Software Engineer · Data",
-        "zh": "高级软件开发工程师 · Data"
-      },
-      "description": {
-        "en": "Personalization infrastructure, ML platforms, data pipelines, and model serving.",
-        "zh": "个性化推荐基础设施、机器学习平台、数据流水线与模型服务。"
-      }
-    },
-    {
-      "date": "Jan 2021—Jul 2022",
-      "company": "Baidu",
-      "logo": "assets/logos/baidu-mark.svg",
-      "logoKey": "baidu",
-      "role": {
-        "en": "Recommendation Algorithm Engineer · Feed Recall",
-        "zh": "推荐算法工程师 · Feed 召回"
-      },
-      "description": {
-        "en": "Large-scale recall, cold start, feed ecosystem, and distributed online systems.",
-        "zh": "大规模召回、冷启动、信息流生态与分布式在线系统。"
-      }
-    },
-    {
-      "type": "internships",
-      "date": "2019—2021",
-      "title": {
+      "company": {
         "en": "Earlier internships",
         "zh": "早期实习"
       },
+      "meta": "2019—2021",
+      "layout": "internships",
       "description": {
         "en": "Search and recommendation internships across ByteDance, NetEase Cloud Music, Microsoft Research Asia, and Tencent Music.",
         "zh": "曾在字节跳动、网易云音乐、微软亚洲研究院与腾讯音乐参与搜广推相关实习。"
       },
       "companies": [
         {
-          "name": "ByteDance",
+          "name": {
+            "en": "ByteDance",
+            "zh": "字节跳动"
+          },
           "logo": "assets/logos/bytedance-mark.svg",
           "logoKey": "bytedance"
         },
         {
-          "name": "NetEase Cloud Music",
+          "name": {
+            "en": "NetEase Cloud Music",
+            "zh": "网易云音乐"
+          },
           "logo": "assets/logos/netease-cloud-music.svg",
           "logoKey": "netease"
         },
         {
-          "name": "Microsoft Research Asia",
+          "name": {
+            "en": "Microsoft Research Asia",
+            "zh": "微软亚洲研究院"
+          },
           "logo": "assets/logos/microsoft-mark.svg",
           "logoKey": "microsoft"
         },
         {
-          "name": "Tencent Music",
+          "name": {
+            "en": "Tencent Music",
+            "zh": "腾讯音乐"
+          },
           "logo": "assets/logos/tencent-music.svg",
           "logoKey": "tencent"
         }
@@ -384,9 +287,7 @@
         "url": "https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s81984/",
         "image": {
           "src": "assets/gtc-2026-onerec.jpeg",
-          "alt": "GTC 2026 OneRec session poster",
-          "position": "center 12%",
-          "size": "100% auto"
+          "alt": "GTC 2026 OneRec session poster"
         },
         "meta": "GTC San Jose · 2026",
         "role": {
@@ -405,9 +306,7 @@
       {
         "image": {
           "src": "assets/datafun-2024-hstu.jpeg",
-          "alt": "DataFun Summit HSTU talk poster",
-          "position": "center 6%",
-          "size": "100% auto"
+          "alt": "DataFun Summit HSTU talk poster"
         },
         "meta": "DataFunSummit · 2024",
         "role": {

@@ -475,39 +475,6 @@ button.text-button {
   transform: translateY(-2px);
 }
 
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  overflow: hidden;
-  margin-top: 62px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.metrics > div {
-  min-height: 154px;
-  padding: 25px 22px;
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.metrics strong {
-  display: block;
-  margin-bottom: 9px;
-  color: var(--accent);
-  font-size: 32px;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.metrics span {
-  display: block;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
 .section-heading {
   margin-bottom: 32px;
 }
@@ -528,15 +495,9 @@ button.text-button {
   font-weight: 500;
 }
 
-.focus-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.focus-card,
 .work-card,
 .wide-card,
+.internship-card,
 .media-card,
 .education-card,
 .publication-card {
@@ -545,48 +506,6 @@ button.text-button {
   border-radius: var(--radius);
 }
 
-.focus-card {
-  min-height: 285px;
-  padding: 24px;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-}
-
-.focus-card:hover {
-  border-color: #c9c8c0;
-  box-shadow: var(--shadow);
-  transform: translateY(-4px);
-}
-
-.focus-icon {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  margin-bottom: 28px;
-  place-items: center;
-  border-radius: 13px;
-}
-
-.focus-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.focus-icon--amber {
-  color: #a75906;
-  background: var(--accent-soft);
-}
-
-.focus-icon--blue {
-  color: var(--blue);
-  background: var(--blue-soft);
-}
-
-.focus-icon--green {
-  color: #5b8b1d;
-  background: var(--green-soft);
-}
-
-.focus-card h3,
 .work-card h3,
 .wide-card h3,
 .media-card h3 {
@@ -594,14 +513,6 @@ button.text-button {
   font-size: 20px;
   letter-spacing: -0.025em;
   line-height: 1.35;
-}
-
-.focus-card p {
-  min-height: 72px;
-  margin: 10px 0 18px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
 }
 
 .tag-row {
@@ -830,131 +741,59 @@ button.text-button {
   line-height: 1.45;
 }
 
-.timeline {
-  position: relative;
-  max-width: 940px;
+.company-heading--plain {
+  padding-left: 53px;
 }
 
-.timeline::before {
-  position: absolute;
-  top: 11px;
-  bottom: 18px;
-  left: 130px;
-  width: 1px;
-  content: "";
-  background: var(--line-dark);
+.internship-card {
+  padding: 25px;
 }
 
-.timeline-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 105px 1fr;
-  gap: 52px;
-  padding: 0 0 42px;
-}
-
-.timeline-marker {
-  position: absolute;
-  top: 7px;
-  left: 125px;
-  z-index: 2;
-  width: 11px;
-  height: 11px;
-  background: var(--bg);
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-}
-
-.timeline-date {
-  padding-top: 1px;
-  color: var(--faint);
-  font-size: 10px;
-  font-weight: 750;
-  letter-spacing: 0.03em;
-  text-align: right;
-}
-
-.timeline-content h3 {
-  margin: 0;
-  font-size: 20px;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.timeline-company {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 7px;
-}
-
-.timeline-company-logo {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-}
-
-.timeline-company-logo img {
-  display: block;
-  width: 32px;
-  height: auto;
-  max-height: 32px;
-  object-fit: contain;
-}
-
-.timeline-company-logo--hulu {
-  filter: none;
-}
-
-.timeline-company-logo--baidu {
-  filter: invert(25%) sepia(99%) saturate(4360%) hue-rotate(235deg) brightness(88%) contrast(104%);
-}
-
-.timeline-company-logo--nvidia {
-  filter: invert(59%) sepia(93%) saturate(565%) hue-rotate(37deg) brightness(91%) contrast(102%);
-}
-
-.timeline-role {
-  margin: 4px 0 7px !important;
-  color: var(--accent) !important;
-  font-size: 12px !important;
-  font-weight: 700;
-}
-
-.timeline-content p {
-  max-width: 650px;
+.internship-card > p {
+  max-width: 720px;
   margin: 0;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.65;
 }
 
-.timeline-item--muted .timeline-marker {
-  border-color: var(--line-dark);
+.internship-companies {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 23px;
 }
 
-.internship-logos {
+.internship-company {
   display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 14px;
+  flex-direction: column;
+  gap: 11px;
+  min-width: 0;
+  padding: 15px;
+  background: var(--surface-alt);
+  border: 1px solid #e5e4de;
+  border-radius: 10px;
+}
+
+.internship-company > strong {
+  font-size: 11px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
 .internship-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
 }
 
 .internship-logo img {
   display: block;
-  width: 32px;
+  width: 38px;
   height: auto;
-  max-height: 32px;
+  max-height: 38px;
   object-fit: contain;
 }
 
@@ -994,21 +833,21 @@ a.media-card:hover,
 }
 
 .media-image {
-  height: 260px;
-  background-color: #e6e6e1;
-  background-repeat: no-repeat;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 5 / 8;
+  background: #eeeee9;
+  place-items: center;
 }
 
-.media-image--gtc {
-  background-image: url("./assets/gtc-2026-onerec.jpeg");
-  background-position: center 12%;
-  background-size: 100% auto;
-}
-
-.media-image--datafun {
-  background-image: url("./assets/datafun-2024-hstu.jpeg");
-  background-position: center 6%;
-  background-size: 100% auto;
+.media-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .media-body {
@@ -1310,22 +1149,6 @@ footer p {
     width: min(var(--content-width), calc(100% - 52px));
   }
 
-  .metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .focus-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .focus-card {
-    min-height: 0;
-  }
-
-  .focus-card p {
-    min-height: 0;
-  }
-
   .wide-card {
     grid-template-columns: 1fr 1.6fr;
   }
@@ -1463,8 +1286,8 @@ footer p {
     gap: 48px;
   }
 
-  .media-image {
-    height: 300px;
+  .internship-companies {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1487,25 +1310,11 @@ footer p {
     padding-left: 10px;
   }
 
-  .metrics {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .metrics > div {
-    min-height: 148px;
-    padding: 21px 17px;
-  }
-
-  .metrics strong {
-    font-size: 28px;
-  }
-
   .section-heading h2 {
     font-size: 35px;
   }
 
-  .work-card,
-  .focus-card {
+  .work-card {
     padding: 21px;
   }
 
@@ -1528,26 +1337,16 @@ footer p {
     grid-column: auto;
   }
 
-  .timeline::before {
-    left: 7px;
+  .company-heading--plain {
+    padding-left: 0;
   }
 
-  .timeline-item {
+  .internship-card {
+    padding: 21px;
+  }
+
+  .internship-companies {
     grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 0 0 39px 31px;
-  }
-
-  .timeline-marker {
-    left: 2px;
-  }
-
-  .timeline-date {
-    text-align: left;
-  }
-
-  .media-image {
-    height: 250px;
   }
 
   .media-body h3 {
@@ -1664,19 +1463,6 @@ footer p {
     font-size: 9.5pt;
   }
 
-  .metrics {
-    margin-top: 6mm;
-  }
-
-  .metrics > div {
-    min-height: 0;
-    padding: 4mm;
-  }
-
-  .metrics strong {
-    font-size: 20pt;
-  }
-
   .section-heading {
     margin-bottom: 4mm;
     break-after: avoid-page;
@@ -1686,27 +1472,23 @@ footer p {
     font-size: 22pt;
   }
 
-  .metrics,
-  .focus-grid,
   .work-grid,
   .media-grid,
   .background-grid {
     gap: 4mm;
   }
 
-  .focus-card,
   .work-card,
   .wide-card,
+  .internship-card,
   .media-card,
   .education-card,
   .publication-card,
-  .writing-item,
-  .timeline-item {
+  .writing-item {
     break-inside: avoid;
     box-shadow: none !important;
   }
 
-  .focus-card,
   .work-card,
   .work-card--featured,
   .media-body,
@@ -1714,9 +1496,9 @@ footer p {
     min-height: 0;
   }
 
-  .focus-card,
   .work-card,
   .wide-card,
+  .internship-card,
   .media-body,
   .education-card,
   .publication-card,
@@ -1724,11 +1506,6 @@ footer p {
     padding: 4mm;
   }
 
-  .focus-icon {
-    display: none;
-  }
-
-  .focus-card p,
   .work-card > p {
     min-height: 0;
     margin: 2mm 0 3mm;
@@ -1753,10 +1530,6 @@ footer p {
 
   .wide-card {
     gap: 4mm;
-  }
-
-  .timeline-item {
-    padding-bottom: 5mm;
   }
 
   .media-body h3 {

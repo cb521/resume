@@ -14,12 +14,6 @@ const mailIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v1
 const printIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z" /></svg>';
 const languageIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3.5 12h17M12 3c2.2 2.5 3.3 5.5 3.3 9S14.2 18.5 12 21M12 3C9.8 5.5 8.7 8.5 8.7 12S9.8 18.5 12 21" /></svg>';
 
-const focusIcons = {
-  chip: '<svg viewBox="0 0 24 24"><path d="M8 3h8v4h4v10h-4v4H8v-4H4V7h4zM9 9h6v6H9zM9 1v2m6-2v2M9 21v2m6-2v2M1 9h3m-3 6h3m16-6h3m-3 6h3" /></svg>',
-  cube: '<svg viewBox="0 0 24 24"><path d="M4 17V7l8-4 8 4v10l-8 4zM4 7l8 5 8-5M12 12v9" /></svg>',
-  search: '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m16 16 5 5M8 11h6m-3-3v6" /></svg>',
-};
-
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -90,10 +84,8 @@ function renderPageChrome(data) {
   const status = localizedPair(site.location, " · ", site.availability);
   const navigation = [
     ["home", "Home", "首页"],
-    ["focus", "Focus", "技术方向"],
-    ["work", "Selected work", "代表项目"],
-    ["experience", "Experience", "工作经历"],
-    ["speaking", "Speaking & writing", "演讲与文章"],
+    ["work", "Work experience", "工作经历"],
+    ["speaking", "Speaking & PR", "演讲和 PR"],
     ["background", "Background", "教育与论文"],
     ["contact", "Contact", "联系我"],
   ];
@@ -126,7 +118,7 @@ function renderPageChrome(data) {
         </a>
 
         <nav class="site-nav" aria-label="Section navigation">
-          ${navigation.map(([id, en, zh], index) => `<a${index === 0 ? ' class="active"' : ""} href="#${id}"><span class="lang-en">${en}</span><span class="lang-zh">${zh}</span></a>`).join("\n          ")}
+          ${navigation.map(([id, en, zh], index) => `<a${index === 0 ? ' class="active"' : ""} href="#${id}"><span class="lang-en">${escapeHtml(en)}</span><span class="lang-zh">${escapeHtml(zh)}</span></a>`).join("\n          ")}
         </nav>
 
         <div class="sidebar-actions">
@@ -163,31 +155,9 @@ function renderHero(data) {
         </div>
 
         <div class="hero-actions reveal">
-          <a class="primary-button" href="#work"><span class="lang-en">Explore my work</span><span class="lang-zh">查看代表项目</span>${chevronIcon}</a>
+          <a class="primary-button" href="#work"><span class="lang-en">Explore my work</span><span class="lang-zh">查看工作经历</span>${chevronIcon}</a>
           <a class="text-button" href="mailto:${escapeHtml(site.email)}">${mailIcon}<span class="lang-en">Email me</span><span class="lang-zh">邮件联系</span></a>
           <button class="text-button print-button print-button--inline" type="button">${printIcon}<span class="lang-en">Print résumé</span><span class="lang-zh">打印简历</span></button>
-        </div>
-
-        <div class="metrics reveal" aria-label="Career highlights">
-          ${hero.metrics.map((metric) => `<div><strong>${escapeHtml(metric.value)}</strong>${localizedInline(metric.label)}</div>`).join("\n          ")}
-        </div>
-      </section>`;
-}
-
-function renderFocus(data) {
-  return `<section class="section" id="focus">
-        ${renderSectionHeading({ en: "What I work on", zh: "技术方向" }, { en: "Focus", zh: "我在做什么" })}
-        <div class="focus-grid">
-          ${data.focus.map((item) => {
-            if (!focusIcons[item.icon]) throw new Error(`Unknown focus icon: ${item.icon}`);
-            if (!new Set(["amber", "blue", "green"]).has(item.color)) throw new Error(`Unknown focus color: ${item.color}`);
-            return `<article class="focus-card reveal">
-            <div class="focus-icon focus-icon--${item.color}" aria-hidden="true">${focusIcons[item.icon]}</div>
-            <h3>${localizedInline(item.title)}</h3>
-            ${localizedBlock("p", item.description)}
-            ${renderTags(item.tags)}
-          </article>`;
-          }).join("\n          ")}
         </div>
       </section>`;
 }
@@ -195,7 +165,7 @@ function renderFocus(data) {
 function renderCompanyHeading(group, spaced) {
   return `<div class="company-heading${spaced ? " company-heading--spaced" : ""} reveal">
           <div class="company-logo company-logo--${escapeHtml(group.logoKey)}" aria-hidden="true"><img src="${escapeHtml(assetUrl(group.logo))}" alt="" /></div>
-          <div><strong>${escapeHtml(group.company)}</strong><span>${localizedInline(group.meta)}</span></div>
+          <div><strong>${localizedInline(group.company)}</strong><span>${localizedInline(group.meta)}</span></div>
         </div>`;
 }
 
@@ -222,8 +192,24 @@ function renderWideCard(project) {
         </article>`;
 }
 
+function renderInternships(group, spaced) {
+  const label = group.companies.map((company) => isLocalized(company.name) ? company.name.en : company.name).join(", ");
+  return `<div class="company-heading company-heading--plain${spaced ? " company-heading--spaced" : ""} reveal">
+          <div><strong>${localizedInline(group.company)}</strong><span>${localizedInline(group.meta)}</span></div>
+        </div>
+        <article class="internship-card reveal">
+          ${localizedBlock("p", group.description)}
+          <div class="internship-companies" role="list" aria-label="${escapeHtml(label)}">
+            ${group.companies.map((company) => `<div class="internship-company" role="listitem"><span class="internship-logo internship-logo--${escapeHtml(company.logoKey)}" aria-hidden="true"><img src="${escapeHtml(assetUrl(company.logo))}" alt="" /></span><strong>${localizedInline(company.name)}</strong></div>`).join("\n            ")}
+          </div>
+        </article>`;
+}
+
 function renderWork(data) {
   const groups = data.work.map((group, index) => {
+    if (group.layout === "internships") {
+      return renderInternships(group, index > 0);
+    }
     const heading = renderCompanyHeading(group, index > 0);
     if (group.layout === "grid") {
       return `${heading}\n        <div class="work-grid">${group.projects.map(renderWorkCard).join("\n")}</div>`;
@@ -235,54 +221,16 @@ function renderWork(data) {
   }).join("\n\n        ");
 
   return `<section class="section" id="work">
-        ${renderSectionHeading({ en: "Selected engineering", zh: "代表性工程实践" }, { en: "Work", zh: "代表项目" })}
+        ${renderSectionHeading({ en: "Where I've worked", zh: "我的职业经历" }, { en: "Work experience", zh: "工作经历" })}
         ${groups}
-      </section>`;
-}
-
-function renderExperienceItem(item) {
-  if (item.type === "internships") {
-    const label = item.companies.map((company) => company.name).join(", ");
-    return `<article class="timeline-item timeline-item--muted reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-date">${localizedInline(item.date)}</div>
-            <div class="timeline-content">
-              <h3>${localizedInline(item.title)}</h3>
-              ${localizedBlock("p", item.description)}
-              <div class="internship-logos" aria-label="${escapeHtml(label)}">
-                ${item.companies.map((company) => `<span class="internship-logo internship-logo--${escapeHtml(company.logoKey)}"><img src="${escapeHtml(assetUrl(company.logo))}" alt="${escapeHtml(company.name)}" /></span>`).join("\n                ")}
-              </div>
-            </div>
-          </article>`;
-  }
-
-  return `<article class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-date">${localizedInline(item.date)}</div>
-            <div class="timeline-content">
-              <div class="timeline-company">
-                <span class="timeline-company-logo timeline-company-logo--${escapeHtml(item.logoKey)}" aria-hidden="true"><img src="${escapeHtml(assetUrl(item.logo))}" alt="" /></span>
-                <h3>${escapeHtml(item.company)}</h3>
-              </div>
-              ${localizedBlock("p", item.role, "timeline-role")}
-              ${localizedBlock("p", item.description)}
-            </div>
-          </article>`;
-}
-
-function renderExperience(data) {
-  return `<section class="section" id="experience">
-        ${renderSectionHeading({ en: "Where I've worked", zh: "工作经历" }, { en: "Experience", zh: "职业经历" })}
-        <div class="timeline">${data.experience.map(renderExperienceItem).join("\n")}</div>
       </section>`;
 }
 
 function renderEvent(event) {
   const tag = event.url ? "a" : "article";
   const linkAttributes = event.url ? ` href="${escapeHtml(event.url)}"${externalAttributes(event.url)}` : "";
-  const imageStyle = `background-image: url('${escapeHtml(assetUrl(event.image.src))}'); background-position: ${escapeHtml(event.image.position)}; background-size: ${escapeHtml(event.image.size)};`;
   return `<${tag} class="media-card reveal"${linkAttributes}>
-            <div class="media-image" role="img" aria-label="${escapeHtml(event.image.alt)}" style="${imageStyle}"></div>
+            <div class="media-image"><img src="${escapeHtml(assetUrl(event.image.src))}" alt="${escapeHtml(event.image.alt)}" loading="lazy" /></div>
             <div class="media-body">
               <div class="card-topline"><span>${escapeHtml(event.meta)}</span><span class="role-pill">${localizedInline(event.role)}</span></div>
               <h3>${localizedInline(event.title)}</h3>
@@ -301,7 +249,7 @@ function renderWritingItem(item) {
 
 function renderSpeaking(data) {
   return `<section class="section" id="speaking">
-        ${renderSectionHeading({ en: "Beyond the code", zh: "代码之外" }, { en: "Speaking & writing", zh: "演讲与文章" })}
+        ${renderSectionHeading({ en: "Beyond the code", zh: "代码之外" }, { en: "Speaking & PR", zh: "演讲和 PR" })}
         <div class="media-grid">${data.speaking.events.map(renderEvent).join("\n")}</div>
         <div class="writing-list">${data.speaking.writing.map(renderWritingItem).join("\n")}</div>
       </section>`;
@@ -364,11 +312,7 @@ function renderBody(data) {
     <main id="main-content">
       ${renderHero(data)}
 
-      ${renderFocus(data)}
-
       ${renderWork(data)}
-
-      ${renderExperience(data)}
 
       ${renderSpeaking(data)}
 
@@ -417,27 +361,25 @@ async function validateData(data) {
   requireLocalizedText(data.hero?.greeting, "hero.greeting");
   requireLocalizedText(data.hero?.lead, "hero.lead");
   requireArray(data.hero?.intro, "hero.intro", { allowEmpty: false });
-  requireArray(data.hero?.metrics, "hero.metrics", { allowEmpty: false });
-  requireArray(data.focus, "focus", { allowEmpty: false });
   requireArray(data.work, "work", { allowEmpty: false });
-  requireArray(data.experience, "experience", { allowEmpty: false });
-
-  data.focus.forEach((item, index) => {
-    const label = `focus[${index}]`;
-    requireText(item.icon, `${label}.icon`);
-    requireText(item.color, `${label}.color`);
-    requireLocalizedText(item.title, `${label}.title`);
-    requireLocalizedText(item.description, `${label}.description`);
-    requireArray(item.tags, `${label}.tags`);
-  });
 
   data.work.forEach((group, groupIndex) => {
     const label = `work[${groupIndex}]`;
-    requireText(group.company, `${label}.company`);
+    requireLocalizedText(group.company, `${label}.company`);
     requireLocalizedText(group.meta, `${label}.meta`);
+    requireValue(["grid", "wide", "internships"].includes(group.layout), `${label}.layout must be grid, wide, or internships`);
+    if (group.layout === "internships") {
+      requireLocalizedText(group.description, `${label}.description`);
+      requireArray(group.companies, `${label}.companies`, { allowEmpty: false });
+      group.companies.forEach((company, companyIndex) => {
+        requireLocalizedText(company.name, `${label}.companies[${companyIndex}].name`);
+        requireText(company.logo, `${label}.companies[${companyIndex}].logo`);
+        requireText(company.logoKey, `${label}.companies[${companyIndex}].logoKey`);
+      });
+      return;
+    }
     requireText(group.logo, `${label}.logo`);
     requireText(group.logoKey, `${label}.logoKey`);
-    requireValue(group.layout === "grid" || group.layout === "wide", `${label}.layout must be grid or wide`);
     requireArray(group.projects, `${label}.projects`, { allowEmpty: false });
 
     group.projects.forEach((project, projectIndex) => {
@@ -461,34 +403,12 @@ async function validateData(data) {
     });
   });
 
-  data.experience.forEach((item, index) => {
-    const label = `experience[${index}]`;
-    requireLocalizedText(item.date, `${label}.date`);
-    requireLocalizedText(item.description, `${label}.description`);
-    if (item.type === "internships") {
-      requireLocalizedText(item.title, `${label}.title`);
-      requireArray(item.companies, `${label}.companies`, { allowEmpty: false });
-      item.companies.forEach((company, companyIndex) => {
-        requireText(company.name, `${label}.companies[${companyIndex}].name`);
-        requireText(company.logo, `${label}.companies[${companyIndex}].logo`);
-        requireText(company.logoKey, `${label}.companies[${companyIndex}].logoKey`);
-      });
-    } else {
-      requireText(item.company, `${label}.company`);
-      requireText(item.logo, `${label}.logo`);
-      requireText(item.logoKey, `${label}.logoKey`);
-      requireLocalizedText(item.role, `${label}.role`);
-    }
-  });
-
   requireArray(data.speaking?.events, "speaking.events");
   data.speaking.events.forEach((event, index) => {
     const label = `speaking.events[${index}]`;
     if (event.url) requireUrl(event.url, `${label}.url`);
     requireText(event.image?.src, `${label}.image.src`);
     requireText(event.image?.alt, `${label}.image.alt`);
-    requireText(event.image?.position, `${label}.image.position`);
-    requireText(event.image?.size, `${label}.image.size`);
     requireText(event.meta, `${label}.meta`);
     requireLocalizedText(event.role, `${label}.role`);
     requireLocalizedText(event.title, `${label}.title`);
