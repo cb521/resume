@@ -1,0 +1,555 @@
+{
+  "site": {
+    "url": "https://cb521.github.io/resume/",
+    "name": {
+      "en": "Bin Chai",
+      "zh": "柴斌"
+    },
+    "monogram": "CB",
+    "title": {
+      "en": "Bin Chai — GPU Performance Engineer",
+      "zh": "柴斌 — GPU 性能工程师"
+    },
+    "description": "Bin Chai is a senior software engineer at NVIDIA focused on GPU performance, generative recommendation, large-scale retrieval, and AI systems.",
+    "ogDescription": "GPU kernels, generative recommendation, large-scale retrieval, and production AI systems.",
+    "email": "1095135384@qq.com",
+    "location": {
+      "en": "Beijing, China",
+      "zh": "中国北京"
+    },
+    "availability": {
+      "en": "Open to technical exchange",
+      "zh": "欢迎技术交流"
+    },
+    "role": {
+      "en": "Senior Software Engineer at NVIDIA",
+      "zh": "NVIDIA 高级软件开发工程师"
+    },
+    "authorProfile": "https://developer.nvidia.cn/blog/author/%E6%9F%B4%E6%96%8C/"
+  },
+  "hero": {
+    "greeting": {
+      "en": "Hi, I'm Bin.",
+      "zh": "你好，我是柴斌。"
+    },
+    "lead": {
+      "en": "I build high-performance GPU software for **recommendation**, **search**, and **large-scale AI systems**.",
+      "zh": "我专注于**推荐系统**、**搜索**与**大规模 AI 系统**的 GPU 性能优化。"
+    },
+    "intro": [
+      {
+        "icon": "⚡",
+        "text": {
+          "en": "CUDA/CUTLASS kernel development and end-to-end performance engineering.",
+          "zh": "CUDA/CUTLASS 高性能 Kernel 开发与端到端性能优化。"
+        }
+      },
+      {
+        "icon": "🧠",
+        "text": {
+          "en": "Generative recommendation systems including OneRec and HSTU.",
+          "zh": "OneRec、HSTU 等生成式推荐系统的训练与推理加速。"
+        }
+      },
+      {
+        "icon": "🔎",
+        "text": {
+          "en": "Production GPU retrieval, LLM/MoE training, and big-data acceleration.",
+          "zh": "生产级 GPU 检索、LLM/MoE 训练与大数据加速。"
+        }
+      },
+      {
+        "icon": "🛠",
+        "text": {
+          "en": "Previously built recommendation infrastructure at Hulu and Baidu.",
+          "zh": "曾在 Hulu 与百度从事推荐基础设施和算法研发。"
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "value": "87%+",
+        "label": {
+          "en": "SOL achieved by a production HSTU kernel",
+          "zh": "HSTU 核心 Kernel 达到的 SOL"
+        }
+      },
+      {
+        "value": "20M+",
+        "label": {
+          "en": "users served by Hulu's sports recommendation platform",
+          "zh": "Hulu 体育推荐平台覆盖用户"
+        }
+      },
+      {
+        "value": "40",
+        "label": {
+          "en": "production machines removed through system refactoring",
+          "zh": "通过架构重构节省线上机器"
+        }
+      },
+      {
+        "value": "2",
+        "label": {
+          "en": "peer-reviewed papers in model efficiency and vision",
+          "zh": "模型效率与视觉方向论文"
+        }
+      }
+    ]
+  },
+  "focus": [
+    {
+      "icon": "chip",
+      "color": "amber",
+      "title": {
+        "en": "GPU kernels",
+        "zh": "GPU Kernel"
+      },
+      "description": {
+        "en": "CUDA and CUTLASS kernels tuned around real model shapes, memory behavior, and hardware limits.",
+        "zh": "围绕真实模型形状、访存行为与硬件极限进行 CUDA/CUTLASS Kernel 优化。"
+      },
+      "tags": ["CUDA", "CUTLASS", "Profiling"]
+    },
+    {
+      "icon": "cube",
+      "color": "blue",
+      "title": {
+        "en": "Generative recommendation",
+        "zh": "生成式推荐"
+      },
+      "description": {
+        "en": "Training and inference acceleration for long-sequence, large-scale recommendation models.",
+        "zh": "面向长序列、大规模生成式推荐模型的训练与推理加速。"
+      },
+      "tags": ["OneRec", "HSTU", "PyTorch"]
+    },
+    {
+      "icon": "search",
+      "color": "green",
+      "title": {
+        "en": "AI systems at scale",
+        "zh": "大规模 AI 系统"
+      },
+      "description": {
+        "en": "Production retrieval, distributed training, data platforms, and end-to-end bottleneck analysis.",
+        "zh": "生产级向量检索、分布式训练、数据平台与端到端瓶颈分析。"
+      },
+      "tags": ["RAFT/cuVS", "Megatron", "Spark"]
+    }
+  ],
+  "work": [
+    {
+      "company": "NVIDIA",
+      "meta": "DevTech · 2023—Now",
+      "logo": "assets/logos/nvidia-mark.svg",
+      "logoKey": "nvidia",
+      "layout": "grid",
+      "projects": [
+        {
+          "featured": true,
+          "years": "2025—2026",
+          "role": "Tech Lead",
+          "title": {
+            "en": "OneRec end-to-end training",
+            "zh": "OneRec 端到端训练优化"
+          },
+          "description": {
+            "en": "Optimized customized FlashAttention-2 backward kernels with CUTLASS and profiled the distributed training path for Kuaishou's production generative recommender.",
+            "zh": "结合客户定制化参数，使用 CUTLASS 优化 FlashAttention-2 反向 Kernel，并完成分布式训练链路分析与优化。"
+          },
+          "results": [
+            {
+              "en": "Supported the phase-one production rollout.",
+              "zh": "支持 OneRec 一期上线。"
+            },
+            {
+              "en": "Presented the work at GTC San Jose 2026.",
+              "zh": "作为讲者在 GTC San Jose 2026 分享。"
+            }
+          ],
+          "tags": ["CUTLASS", "FA2", "Distributed training"],
+          "link": {
+            "url": "https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s81984/",
+            "label": {
+              "en": "GTC session",
+              "zh": "GTC 演讲"
+            }
+          }
+        },
+        {
+          "years": "2024—2025",
+          "role": "Tech Lead",
+          "title": {
+            "en": "High-performance HSTU kernels",
+            "zh": "高性能 HSTU Kernel"
+          },
+          "description": {
+            "en": "Built fused HSTU attention kernels for A100 using CUTLASS GEMM and CUDA operator fusion, improving compute and memory pipelines.",
+            "zh": "基于 CUTLASS GEMM 与 CUDA 算子融合实现 A100 高性能 HSTU 核心算子，系统优化计算与访存流水。"
+          },
+          "results": [
+            {
+              "en": "Reached 87%+ of the hardware speed-of-light target.",
+              "zh": "达到 87%+ SOL 性能。"
+            },
+            {
+              "en": "Applied across recommendation, ads, and e-commerce workloads.",
+              "zh": "在信息流、电商推荐与原生广告场景落地。"
+            }
+          ],
+          "tags": ["HSTU", "CUDA", "Cache"],
+          "link": {
+            "url": "https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/",
+            "label": {
+              "en": "Technical article",
+              "zh": "技术文章"
+            }
+          }
+        },
+        {
+          "years": "2023—2024",
+          "role": "Tech Lead",
+          "title": {
+            "en": "GPU-native ANN search",
+            "zh": "GPU 原生 ANN 检索"
+          },
+          "description": {
+            "en": "Partnered with Baidu Search to evaluate and integrate RAFT IVF-Flat, IVF-PQ, and CAGRA, including INT8 pre-quantization.",
+            "zh": "与百度搜索合作接入并测试 RAFT IVF-Flat、IVF-PQ、CAGRA，并完成 INT8 低精度方案验证。"
+          },
+          "results": [
+            {
+              "en": "Deployed in a core high-throughput search scenario.",
+              "zh": "在百度核心高吞吐搜索场景上线。"
+            },
+            {
+              "en": "Delivered material performance and infrastructure savings.",
+              "zh": "取得显著性能与资源成本收益。"
+            }
+          ],
+          "tags": ["RAFT", "IVF", "INT8"],
+          "link": {
+            "url": "https://segmentfault.com/a/1190000045491973",
+            "label": {
+              "en": "Joint article",
+              "zh": "联合文章"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "company": "Hulu / Disney Streaming",
+      "meta": "Data · 2022—2023",
+      "logo": "assets/logos/hulu.svg",
+      "logoKey": "hulu",
+      "layout": "wide",
+      "projects": [
+        {
+          "role": "Participant · 0→1",
+          "title": {
+            "en": "Sports machine-learning platform",
+            "zh": "体育业务机器学习平台"
+          },
+          "description": {
+            "en": "Helped build an internal platform spanning feature production, extraction, model training, management, and serving for daily sports-content recommendations.",
+            "zh": "从 0 到 1 参与构建覆盖特征生产、抽取、模型训练、管理和服务的内部机器学习平台。"
+          },
+          "metric": {
+            "value": "20M+",
+            "label": {
+              "en": "North American sports users served",
+              "zh": "北美体育用户日常推荐与推送"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "company": "Baidu",
+      "meta": "Feed Recommendation · 2021—2022",
+      "logo": "assets/logos/baidu-mark.svg",
+      "logoKey": "baidu",
+      "layout": "wide",
+      "projects": [
+        {
+          "role": {
+            "en": "Recommendation engineer",
+            "zh": "推荐算法工程师"
+          },
+          "title": {
+            "en": "Feed recall and traffic distribution",
+            "zh": "信息流召回与流量分发"
+          },
+          "description": {
+            "en": "Developed graph-based ICF/UCF recall and refactored cold-start serving paths for Baidu Feed's multi-stage traffic distribution system.",
+            "zh": "参与流量阶梯分发机制，研发图召回 ICF/UCF，并重构冷启动在线服务链路。"
+          },
+          "metric": {
+            "value": "40",
+            "label": {
+              "en": "production machines saved by one serving-path refactor",
+              "zh": "一次召回链路重构节省线上机器"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "date": {
+        "en": "Aug 2023—Now",
+        "zh": "2023.08—至今"
+      },
+      "company": "NVIDIA",
+      "logo": "assets/logos/nvidia-mark.svg",
+      "logoKey": "nvidia",
+      "role": {
+        "en": "Senior Software Engineer · DevTech",
+        "zh": "高级软件开发工程师 · DevTech"
+      },
+      "description": {
+        "en": "GPU acceleration for recommendation, search, LLM/MoE, and large-scale data workloads.",
+        "zh": "负责搜广推、LLM/MoE 与大数据业务的 GPU 加速和性能工程。"
+      }
+    },
+    {
+      "date": "Aug 2022—Aug 2023",
+      "company": "Hulu / Disney Streaming",
+      "logo": "assets/logos/hulu.svg",
+      "logoKey": "hulu",
+      "role": {
+        "en": "Senior Software Engineer · Data",
+        "zh": "高级软件开发工程师 · Data"
+      },
+      "description": {
+        "en": "Personalization infrastructure, ML platforms, data pipelines, and model serving.",
+        "zh": "个性化推荐基础设施、机器学习平台、数据流水线与模型服务。"
+      }
+    },
+    {
+      "date": "Jan 2021—Jul 2022",
+      "company": "Baidu",
+      "logo": "assets/logos/baidu-mark.svg",
+      "logoKey": "baidu",
+      "role": {
+        "en": "Recommendation Algorithm Engineer · Feed Recall",
+        "zh": "推荐算法工程师 · Feed 召回"
+      },
+      "description": {
+        "en": "Large-scale recall, cold start, feed ecosystem, and distributed online systems.",
+        "zh": "大规模召回、冷启动、信息流生态与分布式在线系统。"
+      }
+    },
+    {
+      "type": "internships",
+      "date": "2019—2021",
+      "title": {
+        "en": "Earlier internships",
+        "zh": "早期实习"
+      },
+      "description": {
+        "en": "Search and recommendation internships across ByteDance, NetEase Cloud Music, Microsoft Research Asia, and Tencent Music.",
+        "zh": "曾在字节跳动、网易云音乐、微软亚洲研究院与腾讯音乐参与搜广推相关实习。"
+      },
+      "companies": [
+        {
+          "name": "ByteDance",
+          "logo": "assets/logos/bytedance-mark.svg",
+          "logoKey": "bytedance"
+        },
+        {
+          "name": "NetEase Cloud Music",
+          "logo": "assets/logos/netease-cloud-music.svg",
+          "logoKey": "netease"
+        },
+        {
+          "name": "Microsoft Research Asia",
+          "logo": "assets/logos/microsoft-mark.svg",
+          "logoKey": "microsoft"
+        },
+        {
+          "name": "Tencent Music",
+          "logo": "assets/logos/tencent-music.svg",
+          "logoKey": "tencent"
+        }
+      ]
+    }
+  ],
+  "speaking": {
+    "events": [
+      {
+        "url": "https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s81984/",
+        "image": {
+          "src": "assets/gtc-2026-onerec.jpeg",
+          "alt": "GTC 2026 OneRec session poster",
+          "position": "center 12%",
+          "size": "100% auto"
+        },
+        "meta": "GTC San Jose · 2026",
+        "role": {
+          "en": "Speaker",
+          "zh": "讲者"
+        },
+        "title": {
+          "en": "OneRec: an HPC engine for industrial generative recommendation",
+          "zh": "基于 NVIDIA HPC 打造端到端生成式推荐 OneRec 训练"
+        },
+        "label": {
+          "en": "View official session",
+          "zh": "查看官方演讲页面"
+        }
+      },
+      {
+        "image": {
+          "src": "assets/datafun-2024-hstu.jpeg",
+          "alt": "DataFun Summit HSTU talk poster",
+          "position": "center 6%",
+          "size": "100% auto"
+        },
+        "meta": "DataFunSummit · 2024",
+        "role": {
+          "en": "Invited talk",
+          "zh": "受邀分享"
+        },
+        "title": {
+          "en": "HSTU architecture analysis and performance optimization",
+          "zh": "生成式推荐 HSTU 结构分析与性能优化"
+        },
+        "label": {
+          "en": "Public technical sharing",
+          "zh": "公开技术分享"
+        }
+      }
+    ],
+    "writing": [
+      {
+        "type": "ARTICLE",
+        "url": "https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/",
+        "title": {
+          "en": "NVIDIA recsys-examples: efficient large-scale generative recommendation",
+          "zh": "NVIDIA recsys-examples：生成式推荐系统大规模训推实践"
+        },
+        "meta": {
+          "en": "Co-author · NVIDIA Technical Blog · 2025",
+          "zh": "联合作者 · NVIDIA 技术博客 · 2025"
+        }
+      },
+      {
+        "type": "CASE STUDY",
+        "url": "https://segmentfault.com/a/1190000045491973",
+        "title": {
+          "en": "GPU-native ANN search: engineering practice with Baidu Search",
+          "zh": "基于 GPU 的 ANN 检索：百度搜索工程实践"
+        },
+        "meta": {
+          "en": "Joint engineering article · 2024",
+          "zh": "联合工程文章 · 2024"
+        }
+      },
+      {
+        "type": "OPEN SOURCE",
+        "url": "https://github.com/NVIDIA/recsys-examples",
+        "title": "NVIDIA / recsys-examples",
+        "meta": {
+          "en": "Reference implementations for modern large-scale recommendation systems",
+          "zh": "现代大规模推荐系统参考实现"
+        }
+      }
+    ]
+  },
+  "background": {
+    "education": [
+      {
+        "years": "2018—2021",
+        "school": {
+          "en": "University of Chinese Academy of Sciences",
+          "zh": "中国科学院大学"
+        },
+        "degree": {
+          "en": "M.Eng. in Computer Systems Architecture",
+          "zh": "计算机系统结构 · 硕士"
+        }
+      },
+      {
+        "years": "2014—2018",
+        "school": {
+          "en": "Shandong Agricultural University",
+          "zh": "山东农业大学"
+        },
+        "degree": {
+          "en": "B.Eng. in Internet of Things Engineering",
+          "zh": "物联网工程 · 学士"
+        }
+      }
+    ],
+    "recognition": [
+      {
+        "year": "2021",
+        "name": {
+          "en": "Baidu Excellent Project Award",
+          "zh": "百度优秀项目奖"
+        }
+      },
+      {
+        "year": "2017",
+        "name": {
+          "en": "Shandong Undergraduate Mathematics Competition · First Prize",
+          "zh": "山东省大学生数学竞赛一等奖"
+        }
+      },
+      {
+        "year": "2017",
+        "name": {
+          "en": "Lanqiao Cup, Shandong Embedded Development · Second Prize",
+          "zh": "蓝桥杯山东赛区单片机开发二等奖"
+        }
+      }
+    ],
+    "publications": [
+      {
+        "url": "https://doi.org/10.1016/j.procs.2021.02.086",
+        "role": {
+          "en": "First author",
+          "zh": "第一作者"
+        },
+        "title": "Optimization of workpiece detection model based on channel pruning and fixed-point quantization",
+        "venue": "Procedia Computer Science 183 · 2021"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.procs.2021.02.058",
+        "role": {
+          "en": "Third author",
+          "zh": "第三作者"
+        },
+        "title": "Application of deep learning in workpiece defect detection",
+        "venue": "Procedia Computer Science 183 · 2021"
+      }
+    ],
+    "skills": [
+      "C++",
+      "CUDA",
+      "CUTLASS",
+      "Python",
+      "PyTorch",
+      "Megatron-LM",
+      "TransformerEngine",
+      "RAFT / cuVS",
+      "Spark RAPIDS",
+      "Distributed training",
+      "Performance profiling"
+    ]
+  },
+  "contact": {
+    "title": {
+      "en": "Interested in hard performance problems?",
+      "zh": "一起聊聊有挑战的性能问题。"
+    },
+    "description": {
+      "en": "I'm always happy to exchange ideas on GPU kernels, recommender systems, and scalable AI infrastructure.",
+      "zh": "欢迎交流 GPU Kernel、推荐系统与大规模 AI 基础设施。"
+    }
+  }
+}

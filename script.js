@@ -32,8 +32,8 @@ function setLanguage(language) {
   root.lang = nextLanguage === "zh" ? "zh-CN" : "en";
   storeLanguage(nextLanguage);
   document.title = nextLanguage === "zh"
-    ? "柴斌 — GPU 性能工程师"
-    : "Bin Chai — GPU Performance Engineer";
+    ? root.dataset.titleZh || "柴斌 — GPU 性能工程师"
+    : root.dataset.titleEn || "Bin Chai — GPU Performance Engineer";
 }
 
 setLanguage(storedLanguage || preferredLanguage);
