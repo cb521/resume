@@ -30,3 +30,5 @@ The public site intentionally excludes the phone number, birth date, and gender 
 - Colors and layout: `styles.css`
 - Language switch, navigation, and print behavior: `script.js`
 - Event images and favicon: `assets/`
+
+Company logos are trademarks of their respective owners and are used only to identify employment history.

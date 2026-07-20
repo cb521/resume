@@ -655,29 +655,35 @@ button.text-button {
 }
 
 .company-logo {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  place-items: center;
-  color: #fff;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
   border-radius: 13px;
-  font-size: 20px;
-  font-weight: 850;
+  box-shadow: 0 4px 14px rgba(37, 35, 30, 0.045);
+}
+
+.company-logo img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .company-logo--nvidia {
-  color: #111;
-  background: #b6e46d;
+  width: 108px;
 }
 
 .company-logo--hulu {
-  color: #101010;
-  background: #46e63f;
-  font-size: 27px;
+  width: 78px;
 }
 
 .company-logo--baidu {
-  background: #316fe8;
+  width: 88px;
 }
 
 .work-grid {
@@ -878,6 +884,41 @@ button.text-button {
   line-height: 1.25;
 }
 
+.timeline-company {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 7px;
+}
+
+.timeline-company-logo {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 34px;
+  padding: 7px 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.timeline-company-logo img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.timeline-company-logo--hulu {
+  width: 58px;
+}
+
+.timeline-company-logo--baidu {
+  width: 66px;
+}
+
 .timeline-role {
   margin: 4px 0 7px !important;
   color: var(--accent) !important;
@@ -894,6 +935,46 @@ button.text-button {
 
 .timeline-item--muted .timeline-marker {
   border-color: var(--line-dark);
+}
+
+.internship-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.internship-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 36px;
+  padding: 7px 9px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.internship-logo img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.internship-logo--netease {
+  width: 38px;
+  padding: 7px;
+  color: #e20000;
+}
+
+.internship-logo--netease img {
+  filter: invert(13%) sepia(95%) saturate(6433%) hue-rotate(357deg) brightness(89%) contrast(113%);
+}
+
+.internship-logo--tencent {
+  width: 96px;
 }
 
 .media-grid {
