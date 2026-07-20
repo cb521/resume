@@ -805,7 +805,12 @@ button.text-button {
 }
 
 .internship-logo--tencent {
-  width: 38px;
+  width: 90px;
+}
+
+.internship-logo--tencent img {
+  width: 90px;
+  max-height: 38px;
 }
 
 .internship-logo--bytedance {
