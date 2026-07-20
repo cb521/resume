@@ -184,8 +184,8 @@
         {
           "role": "Participant · 0→1",
           "title": {
-            "en": "Sports machine-learning platform",
-            "zh": "体育业务机器学习平台"
+            "en": "Minimal machine-learning platform",
+            "zh": "极简机器学习平台"
           },
           "description": {
             "en": "Helped build an internal platform spanning feature production, extraction, model training, management, and serving for daily sports-content recommendations.",
@@ -217,8 +217,8 @@
             "zh": "推荐算法工程师"
           },
           "title": {
-            "en": "Implicit quality scoring and traffic distribution",
-            "zh": "隐式质量度体系与流量阶梯分发"
+            "en": "Recall and ecosystem",
+            "zh": "召回与生态"
           },
           "description": {
             "en": "Developed graph-based ICF/UCF recall and refactored cold-start serving paths for Baidu Feed's multi-stage traffic distribution system.",
@@ -242,8 +242,8 @@
       "meta": "2019—2021",
       "layout": "internships",
       "description": {
-        "en": "Search and recommendation internships across ByteDance, NetEase Cloud Music, Microsoft Research Asia, and Tencent Music.",
-        "zh": "曾在字节跳动、网易云音乐、微软亚洲研究院与腾讯音乐参与搜广推相关实习。"
+        "en": "Search and recommendation internships across ByteDance, NetEase Cloud Music, Microsoft Engineering, and Tencent.",
+        "zh": "曾在字节跳动、网易云音乐、微软工程院与腾讯参与搜广推相关实习。"
       },
       "companies": [
         {
@@ -264,16 +264,16 @@
         },
         {
           "name": {
-            "en": "Microsoft Research Asia",
-            "zh": "微软亚洲研究院"
+            "en": "Microsoft Engineering",
+            "zh": "微软工程院"
           },
           "logo": "assets/logos/microsoft-mark.svg",
           "logoKey": "microsoft"
         },
         {
           "name": {
-            "en": "Tencent Music",
-            "zh": "腾讯音乐"
+            "en": "Tencent",
+            "zh": "腾讯"
           },
           "logo": "assets/logos/tencent-music.svg",
           "logoKey": "tencent"

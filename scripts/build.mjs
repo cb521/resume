@@ -71,10 +71,8 @@ function renderTags(tags = []) {
   return `<div class="tag-row">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`;
 }
 
-function renderSectionHeading(kicker, title) {
+function renderSectionHeading(title) {
   return `<div class="section-heading reveal">
-          <span class="section-kicker lang-en">${escapeHtml(kicker.en)}</span>
-          <span class="section-kicker lang-zh">${escapeHtml(kicker.zh)}</span>
           <h2>${localizedInline(title)}<span aria-hidden="true">⌘</span></h2>
         </div>`;
 }
@@ -221,7 +219,7 @@ function renderWork(data) {
   }).join("\n\n        ");
 
   return `<section class="section" id="work">
-        ${renderSectionHeading({ en: "Where I've worked", zh: "我的职业经历" }, { en: "Work experience", zh: "工作经历" })}
+        ${renderSectionHeading({ en: "Work experience", zh: "工作经历" })}
         ${groups}
       </section>`;
 }
@@ -249,7 +247,7 @@ function renderWritingItem(item) {
 
 function renderSpeaking(data) {
   return `<section class="section" id="speaking">
-        ${renderSectionHeading({ en: "Beyond the code", zh: "代码之外" }, { en: "Speaking & PR", zh: "演讲和 PR" })}
+        ${renderSectionHeading({ en: "Speaking & PR", zh: "演讲和 PR" })}
         <div class="media-grid">${data.speaking.events.map(renderEvent).join("\n")}</div>
         <div class="writing-list">${data.speaking.writing.map(renderWritingItem).join("\n")}</div>
       </section>`;
@@ -269,7 +267,7 @@ function renderPublication(item) {
 function renderBackground(data) {
   const background = data.background;
   return `<section class="section" id="background">
-        ${renderSectionHeading({ en: "Academic background", zh: "学术背景" }, { en: "Education & publications", zh: "教育与论文" })}
+        ${renderSectionHeading({ en: "Education & publications", zh: "教育与论文" })}
         <div class="background-grid">
           <div class="background-column reveal">
             <h3 class="subsection-title"><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></h3>
@@ -291,7 +289,6 @@ function renderContact(data) {
   const { site, contact } = data;
   return `<section class="contact-section section" id="contact">
         <div class="contact-card reveal">
-          <span class="section-kicker lang-en">Let's connect</span><span class="section-kicker lang-zh">保持联系</span>
           <h2>${localizedInline(contact.title)}</h2>
           ${localizedBlock("p", contact.description)}
           <div class="contact-actions">
