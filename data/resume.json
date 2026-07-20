@@ -179,25 +179,59 @@
       },
       "logo": "assets/logos/hulu.svg",
       "logoKey": "hulu",
-      "layout": "wide",
+      "layout": "grid",
       "projects": [
         {
-          "role": "Participant · 0→1",
+          "years": "2022.08—2023.06",
+          "role": {
+            "en": "0→1 · Data & features",
+            "zh": "0→1 · 数据与特征"
+          },
           "title": {
             "en": "Minimal machine-learning platform",
             "zh": "极简机器学习平台"
           },
           "description": {
-            "en": "Helped build an internal platform spanning feature production, extraction, model training, management, and serving for daily sports-content recommendations.",
-            "zh": "从 0 到 1 参与构建覆盖特征生产、抽取、模型训练、管理和服务的内部机器学习平台。"
+            "en": "Built the data and feature foundation for an internal ML platform supporting Disney Sports and ESPN personalization.",
+            "zh": "面向 Disney Sports、ESPN 个性化场景，从 0 到 1 搭建内部极简机器学习平台的数据与特征基础。"
           },
-          "metric": {
-            "value": "20M+",
-            "label": {
-              "en": "North American sports users served",
-              "zh": "北美体育用户日常推荐与推送"
+          "results": [
+            {
+              "en": "Contributed feature research, warehouse schema design, and ETL development and testing for Sports Data Mart to support downstream data science teams.",
+              "zh": "参与 Sports Data Mart 特征调研、数仓设计及 ETL 开发测试，为下游 DS 团队提供特征生产能力。"
+            },
+            {
+              "en": "Developed Vulcan Lambda services and Python SDK components, and refactored EMR jobs for feature extraction and model management.",
+              "zh": "开发 Vulcan Lambda 服务与 Python SDK 子模块，并重构 EMR 作业链路，支持特征抽取和模型管理。"
             }
-          }
+          ],
+          "tags": ["Spark", "EMR", "Lambda", "Data modeling"]
+        },
+        {
+          "years": "2022.08—2023.06",
+          "role": {
+            "en": "MLOps · Serving",
+            "zh": "MLOps · 模型服务"
+          },
+          "title": {
+            "en": "Model training & serving",
+            "zh": "模型训练与服务"
+          },
+          "description": {
+            "en": "Productionized Aegis model serving with Databricks, and prototyped Aperture training and model management with Databricks and AWS Chalice.",
+            "zh": "基于 Databricks 将 Aegis 模型服务落地，并使用 Databricks 与 AWS Chalice 探索 Aperture 训练及模型管理能力。"
+          },
+          "results": [
+            {
+              "en": "Automated daily scheduled inference for a production recommendation model.",
+              "zh": "实现线上推荐模型的天级例行推理与服务。"
+            },
+            {
+              "en": "The platform launched successfully, powering daily email recommendations and notifications for 20M+ North American sports users.",
+              "zh": "平台推全上线，为 2000 万+北美体育用户提供日常邮件推荐与推送。"
+            }
+          ],
+          "tags": ["Databricks", "AWS Chalice", "Inference", "MLOps"]
         }
       ]
     },
@@ -209,28 +243,89 @@
       },
       "logo": "assets/logos/baidu-mark.svg",
       "logoKey": "baidu",
-      "layout": "wide",
+      "layout": "grid",
       "projects": [
         {
+          "years": "2021.01—2021.12",
           "role": {
-            "en": "Recommendation engineer",
-            "zh": "推荐算法工程师"
+            "en": "Graph recall",
+            "zh": "图召回"
+          },
+          "title": {
+            "en": "Cross-domain ICF recall",
+            "zh": "跨域 ICF 召回"
+          },
+          "description": {
+            "en": "Combined Toutiao and Baidu Feed author-fan graphs, then used DeepWalk embeddings to build ICF dictionaries for latent-fan recall and new-author onboarding.",
+            "zh": "融合头条与手百 Feed 作者—粉丝关注关系，基于 DeepWalk 构建跨域图向量与 ICF 召回词典，用于作者隐粉召回和新作者引入。"
+          },
+          "results": [
+            {
+              "en": "Lifted Feed DAU by +0.05% and total media time by +0.17%, both statistically significant.",
+              "zh": "Feed DAU 相对提升 +0.05%，总媒体时长相对提升 +0.17%，均达到显著。"
+            },
+            {
+              "en": "Provided operations and product teams with cases for onboarding new authors.",
+              "zh": "为运营和产品团队引入新作者提供案例支持。"
+            }
+          ],
+          "tags": ["DeepWalk", "Graph recall", "ICF"]
+        },
+        {
+          "years": "2021.01—2021.12",
+          "role": {
+            "en": "Cold start",
+            "zh": "冷启动"
+          },
+          "title": {
+            "en": "UCF & Lookalike recall",
+            "zh": "UCF 与 Lookalike 召回"
+          },
+          "description": {
+            "en": "Used Swing to mine domain-similar KOLs, built SNDB similar-user storage and click indexes, and fused KOL voting with Lookalike and author recall.",
+            "zh": "基于 Swing 挖掘用户领域相似 KOL，构建 SNDB 相似用户存储与历史点击索引，并融合 KOL 投票、Lookalike 与作者召回。"
+          },
+          "results": [
+            {
+              "en": "Raised cold-start success by +2.46%, +14.74%, and +2.96% across three content types.",
+              "zh": "三类内容冷启动成功率分别相对提升 +2.46%、+14.74% 和 +2.96%。"
+            },
+            {
+              "en": "Lookalike recall for the guaranteed-distribution queue lifted media time +0.33%, distribution +0.35%, and completion from 28.8% to 31.7%.",
+              "zh": "保量队列 Lookalike 召回带来媒体时长 +0.33%、分发量 +0.35%，整体完成率由 28.8% 提升至 31.7%。"
+            }
+          ],
+          "tags": ["Swing", "SNDB", "Lookalike"]
+        },
+        {
+          "years": "2021.07—2022.08",
+          "role": {
+            "en": "Serving architecture",
+            "zh": "服务架构"
           },
           "title": {
             "en": "Recall and ecosystem",
             "zh": "召回与生态"
           },
           "description": {
-            "en": "Developed graph-based ICF/UCF recall and refactored cold-start serving paths for Baidu Feed's multi-stage traffic distribution system.",
-            "zh": "参与流量阶梯分发机制，研发图召回 ICF/UCF，并重构冷启动在线服务链路。"
+            "en": "Worked on the traffic-ladder distribution path from cold-start exploration and warm-up diffusion to full distribution, and refactored online recall serving.",
+            "zh": "参与冷启试探、预热扩散、全面分发与推爆等流量阶梯链路建设，并重构在线召回服务架构。"
           },
-          "metric": {
-            "value": "40",
-            "label": {
-              "en": "production machines saved by one serving-path refactor",
-              "zh": "一次召回链路重构节省线上机器"
+          "results": [
+            {
+              "en": "Consolidated three content-specific recall queues into a single request path, saving 40 production machines.",
+              "zh": "将图短小三路召回队列合并为一次请求，节省 40 台线上机器。"
+            },
+            {
+              "en": "A related acquisition-queue refactor saved 10 additional machines and improved operations case triage.",
+              "zh": "相关采买队列重构额外节省 10 台机器，并提升运营 Case 排查效率。"
+            },
+            {
+              "en": "Selected as a Baidu quarterly best project and nominated for the company's top annual award.",
+              "zh": "项目入选百度季度最佳，并获百度年度最高奖提名。"
             }
-          }
+          ],
+          "tags": ["Recall", "Serving", "Distributed systems"]
         }
       ]
     },
