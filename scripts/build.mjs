@@ -84,7 +84,7 @@ function renderPageChrome(data) {
     ["home", "Home", "首页"],
     ["work", "Work Experience", "工作经历"],
     ["speaking", "Sharing", "分享"],
-    ["background", "Background", "教育与论文"],
+    ["background", "Education & Publications", "教育与论文"],
     ["contact", "Contact", "联系我"],
   ];
 
