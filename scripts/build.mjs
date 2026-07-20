@@ -202,23 +202,30 @@ function renderInternships(group, spaced) {
 }
 
 function renderWork(data) {
-  const groups = data.work.map((group, index) => {
-    if (group.layout === "internships") {
-      return renderInternships(group, index > 0);
-    }
-    const heading = renderCompanyHeading(group, index > 0);
+  const careerGroups = data.work.filter((group) => group.layout !== "internships");
+  const internshipGroups = data.work.filter((group) => group.layout === "internships");
+
+  const careerEntries = careerGroups.map((group) => {
+    const heading = renderCompanyHeading(group, false);
+    let projects;
     if (group.layout === "grid") {
-      return `${heading}\n        <div class="work-grid">${group.projects.map(renderWorkCard).join("\n")}</div>`;
+      projects = `<div class="work-grid">${group.projects.map(renderWorkCard).join("\n")}</div>`;
+    } else if (group.layout === "wide") {
+      projects = group.projects.map(renderWideCard).join("\n        ");
+    } else {
+      throw new Error(`Unknown work layout: ${group.layout}`);
     }
-    if (group.layout === "wide") {
-      return `${heading}\n        ${group.projects.map(renderWideCard).join("\n        ")}`;
-    }
-    throw new Error(`Unknown work layout: ${group.layout}`);
+    return `<div class="career-entry">${heading}\n        ${projects}</div>`;
   }).join("\n\n        ");
+
+  const internships = internshipGroups
+    .map((group, index) => `<div class="internship-entry">${renderInternships(group, careerGroups.length > 0 || index > 0)}</div>`)
+    .join("\n\n        ");
 
   return `<section class="section" id="work">
         ${renderSectionHeading({ en: "Work Experience", zh: "工作经历" })}
-        ${groups}
+        <div class="career-timeline">${careerEntries}</div>
+        ${internships}
       </section>`;
 }
 

@@ -54,8 +54,8 @@
       {
         "icon": "🔎",
         "text": {
-          "en": "Production GPU retrieval, LLM/MoE training, and big-data acceleration.",
-          "zh": "生产级 GPU 检索、LLM/MoE 训练与大数据加速。"
+          "en": "Production GPU retrieval with inverted and vector indexes, plus GPU-accelerated Spark for big-data workloads.",
+          "zh": "生产级 GPU 检索，包括倒排索引与向量索引，以及基于 GPU 的 Spark 大数据加速。"
         }
       },
       {
