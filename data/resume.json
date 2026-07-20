@@ -236,7 +236,7 @@
     },
     {
       "company": {
-        "en": "Earlier internships",
+        "en": "Earlier Internships",
         "zh": "早期实习"
       },
       "meta": "2019—2021",
@@ -251,7 +251,7 @@
             "en": "ByteDance",
             "zh": "字节跳动"
           },
-          "logo": "assets/logos/bytedance-mark.svg",
+          "logo": "assets/logos/bytedance.svg",
           "logoKey": "bytedance"
         },
         {
@@ -275,7 +275,7 @@
             "en": "Tencent",
             "zh": "腾讯"
           },
-          "logo": "assets/logos/tencent.png",
+          "logo": "assets/logos/tencent.svg",
           "logoKey": "tencent"
         }
       ]
@@ -443,7 +443,7 @@
   },
   "contact": {
     "title": {
-      "en": "Interested in hard performance problems?",
+      "en": "Interested in Hard Performance Problems?",
       "zh": "一起聊聊有挑战的性能问题。"
     },
     "description": {

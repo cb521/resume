@@ -82,8 +82,8 @@ function renderPageChrome(data) {
   const status = localizedPair(site.location, " · ", site.availability);
   const navigation = [
     ["home", "Home", "首页"],
-    ["work", "Work experience", "工作经历"],
-    ["speaking", "Speaking & PR", "演讲和 PR"],
+    ["work", "Work Experience", "工作经历"],
+    ["speaking", "Sharing", "分享"],
     ["background", "Background", "教育与论文"],
     ["contact", "Contact", "联系我"],
   ];
@@ -217,7 +217,7 @@ function renderWork(data) {
   }).join("\n\n        ");
 
   return `<section class="section" id="work">
-        ${renderSectionHeading({ en: "Work experience", zh: "工作经历" })}
+        ${renderSectionHeading({ en: "Work Experience", zh: "工作经历" })}
         ${groups}
       </section>`;
 }
@@ -245,7 +245,7 @@ function renderWritingItem(item) {
 
 function renderSpeaking(data) {
   return `<section class="section" id="speaking">
-        ${renderSectionHeading({ en: "Speaking & PR", zh: "演讲和 PR" })}
+        ${renderSectionHeading({ en: "Sharing", zh: "分享" })}
         <div class="media-grid">${data.speaking.events.map(renderEvent).join("\n")}</div>
         <div class="writing-list">${data.speaking.writing.map(renderWritingItem).join("\n")}</div>
       </section>`;
@@ -265,12 +265,12 @@ function renderPublication(item) {
 function renderBackground(data) {
   const background = data.background;
   return `<section class="section" id="background">
-        ${renderSectionHeading({ en: "Education & publications", zh: "教育与论文" })}
+        ${renderSectionHeading({ en: "Education & Publications", zh: "教育与论文" })}
         <div class="background-grid">
           <div class="background-column reveal">
             <h3 class="subsection-title"><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></h3>
             ${background.education.map(renderEducation).join("\n            ")}
-            <h3 class="subsection-title subsection-title--spaced"><span class="lang-en">Selected recognition</span><span class="lang-zh">部分奖项</span></h3>
+            <h3 class="subsection-title subsection-title--spaced"><span class="lang-en">Selected Recognition</span><span class="lang-zh">部分奖项</span></h3>
             <ul class="award-list">${background.recognition.map((item) => `<li><strong>${escapeHtml(item.year)}</strong>${localizedInline(item.name)}</li>`).join("")}</ul>
           </div>
           <div class="background-column reveal">

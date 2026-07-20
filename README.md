@@ -21,7 +21,7 @@
 | 姓名、邮箱、地点、职位 | `site` |
 | 首页介绍 | `hero` |
 | 公司、职位、项目和早期实习 | `work` |
-| 演讲和 PR | `speaking` |
+| 分享内容 | `speaking` |
 | 教育、奖项、论文、技能 | `background` |
 | 联系区文案 | `contact` |
 

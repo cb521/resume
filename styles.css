@@ -795,18 +795,16 @@ button.text-button {
   filter: invert(13%) sepia(95%) saturate(6433%) hue-rotate(357deg) brightness(89%) contrast(113%);
 }
 
+.internship-logo--bytedance,
 .internship-logo--tencent {
   width: 156px;
 }
 
+.internship-logo--bytedance img,
 .internship-logo--tencent img {
   width: 140px;
   max-width: 140px;
   max-height: 40px;
-}
-
-.internship-logo--bytedance {
-  filter: invert(55%) sepia(94%) saturate(2302%) hue-rotate(194deg) brightness(101%) contrast(101%);
 }
 
 .media-grid {
