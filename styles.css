@@ -659,31 +659,28 @@ button.text-button {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 10px 12px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  box-shadow: 0 4px 14px rgba(37, 35, 30, 0.045);
+  width: 40px;
+  height: 40px;
 }
 
 .company-logo img {
   display: block;
-  width: 100%;
-  max-height: 100%;
+  width: 40px;
+  height: auto;
+  max-height: 40px;
   object-fit: contain;
 }
 
 .company-logo--nvidia {
-  width: 108px;
+  filter: invert(59%) sepia(93%) saturate(565%) hue-rotate(37deg) brightness(91%) contrast(102%);
 }
 
 .company-logo--hulu {
-  width: 78px;
+  filter: none;
 }
 
 .company-logo--baidu {
-  width: 88px;
+  filter: invert(25%) sepia(99%) saturate(4360%) hue-rotate(235deg) brightness(88%) contrast(104%);
 }
 
 .work-grid {
@@ -896,27 +893,28 @@ button.text-button {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 34px;
-  padding: 7px 8px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 9px;
+  width: 32px;
+  height: 32px;
 }
 
 .timeline-company-logo img {
   display: block;
-  width: 100%;
-  max-height: 100%;
+  width: 32px;
+  height: auto;
+  max-height: 32px;
   object-fit: contain;
 }
 
 .timeline-company-logo--hulu {
-  width: 58px;
+  filter: none;
 }
 
 .timeline-company-logo--baidu {
-  width: 66px;
+  filter: invert(25%) sepia(99%) saturate(4360%) hue-rotate(235deg) brightness(88%) contrast(104%);
+}
+
+.timeline-company-logo--nvidia {
+  filter: invert(59%) sepia(93%) saturate(565%) hue-rotate(37deg) brightness(91%) contrast(102%);
 }
 
 .timeline-role {
@@ -948,24 +946,19 @@ button.text-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 92px;
-  height: 36px;
-  padding: 7px 9px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 9px;
+  width: 32px;
+  height: 32px;
 }
 
 .internship-logo img {
   display: block;
-  width: 100%;
-  max-height: 100%;
+  width: 32px;
+  height: auto;
+  max-height: 32px;
   object-fit: contain;
 }
 
 .internship-logo--netease {
-  width: 38px;
-  padding: 7px;
   color: #e20000;
 }
 
@@ -974,7 +967,11 @@ button.text-button {
 }
 
 .internship-logo--tencent {
-  width: 96px;
+  width: 38px;
+}
+
+.internship-logo--bytedance {
+  filter: invert(55%) sepia(94%) saturate(2302%) hue-rotate(194deg) brightness(101%) contrast(101%);
 }
 
 .media-grid {
