@@ -1453,7 +1453,6 @@ footer p {
   .mobile-bar,
   .drawer-overlay,
   .hero-actions,
-  .media-image,
   .contact-section,
   .skip-link {
     display: none !important;
@@ -1514,6 +1513,22 @@ footer p {
   .media-grid,
   .background-grid {
     gap: 4mm;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .media-image {
+    display: grid !important;
+    aspect-ratio: 5 / 8;
+    background: #eee;
+  }
+
+  .media-image img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .work-card,

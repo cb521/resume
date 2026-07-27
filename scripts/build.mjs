@@ -233,7 +233,7 @@ function renderEvent(event) {
   const tag = event.url ? "a" : "article";
   const linkAttributes = event.url ? ` href="${escapeHtml(event.url)}"${externalAttributes(event.url)}` : "";
   return `<${tag} class="media-card reveal"${linkAttributes}>
-            <div class="media-image"><img src="${escapeHtml(assetUrl(event.image.src))}" alt="${escapeHtml(event.image.alt)}" loading="lazy" /></div>
+            <div class="media-image"><img src="${escapeHtml(assetUrl(event.image.src))}" alt="${escapeHtml(event.image.alt)}" loading="eager" /></div>
             <div class="media-body">
               <div class="card-topline"><span>${escapeHtml(event.meta)}</span><span class="role-pill">${localizedInline(event.role)}</span></div>
               <h3>${localizedInline(event.title)}</h3>
