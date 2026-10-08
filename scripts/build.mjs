@@ -28,7 +28,19 @@ function formatInline(value) {
   if (parts.length % 2 === 0) {
     throw new Error(`Unmatched ** in text: ${value}`);
   }
-  return parts.map((part, index) => index % 2 ? `<strong>${escapeHtml(part)}</strong>` : escapeHtml(part)).join("");
+  const renderLinks = (text) => {
+    let html = "";
+    let cursor = 0;
+    for (const match of text.matchAll(/\[([^\]\n]+)\]\((https:\/\/[^\s)]+)\)/g)) {
+      const [, label, url] = match;
+      new URL(url);
+      html += escapeHtml(text.slice(cursor, match.index));
+      html += `<a href="${escapeHtml(url)}"${externalAttributes(url)}>${escapeHtml(label)}</a>`;
+      cursor = match.index + match[0].length;
+    }
+    return html + escapeHtml(text.slice(cursor));
+  };
+  return parts.map((part, index) => index % 2 ? `<strong>${renderLinks(part)}</strong>` : renderLinks(part)).join("");
 }
 
 function isLocalized(value) {
@@ -146,7 +158,7 @@ function renderHero(data) {
         <div class="hero-copy reveal">
           ${localizedBlock("p", hero.lead, "lead", { markdown: true })}
           <ul class="intro-list">
-            ${hero.intro.map((item) => `<li><span class="bullet-icon" aria-hidden="true">${escapeHtml(item.icon)}</span>${localizedInline(item.text)}</li>`).join("\n            ")}
+            ${hero.intro.map((item) => `<li><span class="bullet-icon" aria-hidden="true">${escapeHtml(item.icon)}</span>${localizedInline(item.text, { markdown: true })}</li>`).join("\n            ")}
           </ul>
         </div>
 

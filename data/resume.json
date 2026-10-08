@@ -10,8 +10,8 @@
       "en": "Bin Chai — GPU Performance Engineer",
       "zh": "柴斌 — GPU 性能工程师"
     },
-    "description": "Bin Chai is a senior software engineer at NVIDIA with full-stack expertise spanning algorithm strategy, platform architecture, and low-level GPU performance optimization.",
-    "ogDescription": "Full-stack AI systems engineering—from algorithm strategy and platform architecture to low-level GPU performance optimization.",
+    "description": "Bin Chai is a senior software engineer at NVIDIA with around five years of full-stack experience spanning algorithm strategy, business architecture and shared platforms, and GPU performance optimization and acceleration.",
+    "ogDescription": "Around five years of full-stack experience in algorithm strategy, business architecture and shared platforms, and GPU performance optimization and acceleration.",
     "email": "1095135384@qq.com",
     "location": {
       "en": "Beijing, China",
@@ -33,36 +33,36 @@
       "zh": "你好，我是柴斌。"
     },
     "lead": {
-      "en": "I'm a **full-stack AI systems engineer** whose work spans **algorithm strategy**, **platform architecture**, and **low-level GPU performance optimization**.",
-      "zh": "我是覆盖**算法策略**、**中台架构**到**底层 GPU 性能优化**的**全栈选手**。"
+      "en": "I have around **five years of full-stack experience**, spanning **high-level algorithm strategy**, **business architecture and shared platforms**, and **low-level GPU performance optimization and acceleration**.",
+      "zh": "我有 **5 年左右的全栈工作经验**，涵盖**上层算法策略**、**中层业务架构与中台建设**，以及**底层 GPU 性能优化与加速**。"
     },
     "intro": [
       {
         "icon": "⚡",
         "text": {
-          "en": "CUDA/CUTLASS kernel development and end-to-end performance engineering.",
-          "zh": "CUDA/CUTLASS 高性能 Kernel 开发与端到端性能优化。"
-        }
-      },
-      {
-        "icon": "🧠",
-        "text": {
-          "en": "Generative recommendation systems including OneRec and HSTU.",
-          "zh": "OneRec、HSTU 等生成式推荐系统的训练与推理加速。"
-        }
-      },
-      {
-        "icon": "🔎",
-        "text": {
-          "en": "Production GPU retrieval with inverted and vector indexes, plus GPU-accelerated Spark for big-data workloads.",
-          "zh": "生产级 GPU 检索，包括倒排索引与向量索引，以及基于 GPU 的 Spark 大数据加速。"
+          "en": "**GPU Kernel** ([HSTU](https://github.com/pytorch/FBGEMM/tree/main/fbgemm_gpu/experimental/hstu), [DeepSeek Indexer](https://github.com/NVIDIA/cudnn-frontend/tree/develop/python/cudnn/deepseek_sparse_attention), [GR Decode Attention](https://developer.nvidia.cn/blog/gr-inference-generative-recommendation-inference-system-design-performance-evaluation/), [OneRec-customized FA2](https://github.com/cb521/flash-attention/tree/bwd_loop_opt), etc.): kernel development and tuning with CUDA, CUTLASS and CuTe DSL.",
+          "zh": "**GPU Kernel**（[HSTU](https://github.com/pytorch/FBGEMM/tree/main/fbgemm_gpu/experimental/hstu)、[DeepSeek Indexer](https://github.com/NVIDIA/cudnn-frontend/tree/develop/python/cudnn/deepseek_sparse_attention)、[GR Decode Attention](https://developer.nvidia.cn/blog/gr-inference-generative-recommendation-inference-system-design-performance-evaluation/)、[OneRec-定制 FA2](https://github.com/cb521/flash-attention/tree/bwd_loop_opt)、etc.）：基于 CUDA、CUTLASS 与 CuTe DSL 的算子开发与调优。"
         }
       },
       {
         "icon": "🛠",
         "text": {
-          "en": "Previously built recommendation infrastructure at Hulu and Baidu.",
-          "zh": "曾在 Hulu 与百度从事推荐基础设施和算法研发。"
+          "en": "**GPU Frameworks** ([GR-Inference](https://developer.nvidia.cn/blog/gr-inference-generative-recommendation-inference-system-design-performance-evaluation/), [GPU ANN search](https://segmentfault.com/a/1190000045491973), [cuDF-Spark](https://github.com/cb521/cudf-spark), [Mega-Flink](https://github.com/cb521/Mega-Flink)): generative recommendation inference, GPU retrieval, and batch and stream processing acceleration.",
+          "zh": "**GPU 框架**（[GR-Inference](https://developer.nvidia.cn/blog/gr-inference-generative-recommendation-inference-system-design-performance-evaluation/)、[GPU ANN 检索](https://segmentfault.com/a/1190000045491973)、[cuDF-Spark](https://github.com/cb521/cudf-spark)、[Mega-Flink](https://github.com/cb521/Mega-Flink)）：生成式推荐推理、GPU 检索及批流数据处理加速。"
+        }
+      },
+      {
+        "icon": "🧩",
+        "text": {
+          "en": "**Machine Learning Platforms** (Hulu data and features, model training and serving): helped build an ML platform from the ground up for Disney Sports and ESPN personalization.",
+          "zh": "**机器学习平台**（Hulu 数据与特征、模型训练与服务）：参与平台从 0 到 1 建设，支撑 Disney Sports、ESPN 个性化推荐。"
+        }
+      },
+      {
+        "icon": "🧠",
+        "text": {
+          "en": "**Recommendation Algorithms** (cross-domain ICF, UCF / Lookalike recall, cold start and traffic allocation): recommendation development and online experiments for Baidu Feed.",
+          "zh": "**算法策略**（跨域 ICF 召回、UCF / Lookalike 召回、冷启动与流量分发）：百度信息流推荐策略研发与线上实验。"
         }
       }
     ]
@@ -80,6 +80,101 @@
       "projects": [
         {
           "featured": true,
+          "years": "2026",
+          "role": {
+            "en": "Inference systems",
+            "zh": "推理系统研发"
+          },
+          "title": {
+            "en": "GR-Inference · Generative retrieval engine",
+            "zh": "GR-Inference · 生成式召回推理引擎"
+          },
+          "description": {
+            "en": "Developed a wide-beam generative retrieval engine, optimizing scheduling, KV sharing and attention kernels for deployment in Xiaohongshu Search.",
+            "zh": "研发面向大 Beam 生成式召回的推理引擎，优化调度、KV 共享与专用 Attention，支撑小红书搜索上线。"
+          },
+          "results": [
+            {
+              "en": "Delivered 1.50–2.53× the throughput of tested SGLang implementations (Qwen3-0.6B BF16, beam 900, full-vocabulary logprob, mean end-to-end latency ≤100 ms).",
+              "zh": "吞吐达到所测 SGLang 实现的 1.50–2.53 倍（Qwen3-0.6B BF16、Beam=900、全词表 logprob、平均端到端延迟 ≤100 ms）。"
+            },
+            {
+              "en": "Joint rollout: CTR +0.03 percentage points and offline Recall@1000 +5.7%.",
+              "zh": "联合上线项目：点击率 +0.03 个百分点，离线 Recall@1000 +5.7%。"
+            }
+          ],
+          "tags": ["LLM serving", "Beam Search", "CUDA Graph", "GPU kernels"],
+          "link": {
+            "url": "https://mp.weixin.qq.com/s/W2PFlau62gtQjfXEL_EkHQ",
+            "label": {
+              "en": "Joint case study",
+              "zh": "联合实践文章"
+            }
+          }
+        },
+        {
+          "years": "2024 · 2026",
+          "role": {
+            "en": "Kernel development",
+            "zh": "Kernel 研发"
+          },
+          "title": {
+            "en": "FBGEMM · HSTU kernel optimization",
+            "zh": "FBGEMM · HSTU 多卡型优化"
+          },
+          "description": {
+            "en": "Contributed HSTU kernel implementations and optimizations in FBGEMM for A100, L20, H100, H20 and other NVIDIA GPUs.",
+            "zh": "参与 FBGEMM 中 HSTU 算子的多卡型实现与优化，覆盖 A100、L20、H100、H20 等 GPU。"
+          },
+          "results": [
+            {
+              "en": "Delivered industry-leading performance near the hardware speed-of-light (SOL) limit across supported GPU architectures.",
+              "zh": "各卡型实现均达到业界 SOL 性能水平。"
+            },
+            {
+              "en": "Deployed in feed, e-commerce recommendation and advertising workloads.",
+              "zh": "相关工作落地信息流、电商推荐与广告场景。"
+            }
+          ],
+          "tags": ["FBGEMM", "HSTU", "CUDA", "CUTLASS"],
+          "link": {
+            "url": "https://github.com/pytorch/FBGEMM/tree/main/fbgemm_gpu/experimental/hstu",
+            "label": {
+              "en": "FBGEMM source",
+              "zh": "FBGEMM 源码"
+            }
+          }
+        },
+        {
+          "years": "2026",
+          "role": {
+            "en": "Kernel co-developer",
+            "zh": "Kernel 共同开发者"
+          },
+          "title": {
+            "en": "cuDNN · DeepSeek Indexer",
+            "zh": "cuDNN · DeepSeek Indexer"
+          },
+          "description": {
+            "en": "Contributed CuTe DSL kernels for DeepSeek Indexer, optimizing index computation for sparse attention.",
+            "zh": "参与 DeepSeek Indexer 算子开发与性能优化，基于 CuTe DSL 实现稀疏注意力索引计算。"
+          },
+          "results": [
+            {
+              "en": "Named as a co-developer in the official cuDNN README.",
+              "zh": "cuDNN 官方 README 列为共同开发者。"
+            }
+          ],
+          "tags": ["CuTe DSL", "Indexer", "Sparse attention"],
+          "link": {
+            "url": "https://github.com/NVIDIA/cudnn-frontend/blob/develop/python/cudnn/deepseek_sparse_attention/README.md#acknowledgements",
+            "label": {
+              "en": "Project & acknowledgements",
+              "zh": "项目与开发者署名"
+            }
+          }
+        },
+        {
           "years": "2025.10—2026.03",
           "role": "Tech Lead",
           "title": {
@@ -106,36 +201,6 @@
             "label": {
               "en": "GTC session",
               "zh": "GTC 演讲"
-            }
-          }
-        },
-        {
-          "years": "2024.03—2024.12",
-          "role": "Tech Lead",
-          "title": {
-            "en": "High-performance HSTU kernels",
-            "zh": "高性能 HSTU Kernel"
-          },
-          "description": {
-            "en": "Built fused HSTU attention kernels for A100 using CUTLASS GEMM and CUDA operator fusion, improving compute and memory pipelines.",
-            "zh": "基于 CUTLASS GEMM 与 CUDA 算子融合实现 A100 高性能 HSTU 核心算子，系统优化计算与访存流水。"
-          },
-          "results": [
-            {
-              "en": "Reached 87%+ of the hardware speed-of-light target.",
-              "zh": "达到 87%+ SOL 性能。"
-            },
-            {
-              "en": "Applied across recommendation, ads, and e-commerce workloads.",
-              "zh": "在信息流、电商推荐与原生广告场景落地。"
-            }
-          ],
-          "tags": ["HSTU", "CUDA", "Cache"],
-          "link": {
-            "url": "https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/",
-            "label": {
-              "en": "Technical article",
-              "zh": "技术文章"
             }
           }
         },
@@ -182,56 +247,35 @@
       "layout": "grid",
       "projects": [
         {
+          "featured": true,
           "years": "2022.08—2023.06",
           "role": {
-            "en": "0→1 · Data & features",
-            "zh": "0→1 · 数据与特征"
+            "en": "0→1 · ML platform",
+            "zh": "0→1 · 机器学习平台"
           },
           "title": {
-            "en": "Minimal machine-learning platform",
-            "zh": "极简机器学习平台"
+            "en": "Machine-learning platform & recommendation serving",
+            "zh": "机器学习平台与推荐服务"
           },
           "description": {
-            "en": "Built the data and feature foundation for an internal ML platform supporting Disney Sports and ESPN personalization.",
-            "zh": "面向 Disney Sports、ESPN 个性化场景，从 0 到 1 搭建内部极简机器学习平台的数据与特征基础。"
+            "en": "Helped build an ML platform from the ground up for Disney Sports and ESPN, connecting data and features with model training, management and production inference.",
+            "zh": "面向 Disney Sports、ESPN，从 0 到 1 参与搭建机器学习平台，串联数据特征、模型训练、管理与线上推理。"
           },
           "results": [
             {
-              "en": "Contributed feature research, warehouse schema design, and ETL development and testing for Sports Data Mart to support downstream data science teams.",
-              "zh": "参与 Sports Data Mart 特征调研、数仓设计及 ETL 开发测试，为下游 DS 团队提供特征生产能力。"
+              "en": "Contributed to Sports Data Mart and feature ETL using Spark / EMR, and developed Vulcan Lambda services and Python SDK components.",
+              "zh": "基于 Spark / EMR 参与 Sports Data Mart 与特征 ETL 建设，并开发 Vulcan Lambda 服务和 Python SDK。"
             },
             {
-              "en": "Developed Vulcan Lambda services and Python SDK components, and refactored EMR jobs for feature extraction and model management.",
-              "zh": "开发 Vulcan Lambda 服务与 Python SDK 子模块，并重构 EMR 作业链路，支持特征抽取和模型管理。"
-            }
-          ],
-          "tags": ["Spark", "EMR", "Lambda", "Data modeling"]
-        },
-        {
-          "years": "2022.08—2023.06",
-          "role": {
-            "en": "MLOps · Serving",
-            "zh": "MLOps · 模型服务"
-          },
-          "title": {
-            "en": "Model training & serving",
-            "zh": "模型训练与服务"
-          },
-          "description": {
-            "en": "Productionized Aegis model serving with Databricks, and prototyped Aperture training and model management with Databricks and AWS Chalice.",
-            "zh": "基于 Databricks 将 Aegis 模型服务落地，并使用 Databricks 与 AWS Chalice 探索 Aperture 训练及模型管理能力。"
-          },
-          "results": [
-            {
-              "en": "Automated daily scheduled inference for a production recommendation model.",
-              "zh": "实现线上推荐模型的天级例行推理与服务。"
+              "en": "Productionized Aegis serving on Databricks and prototyped Aperture training and model management with Databricks / AWS Chalice.",
+              "zh": "落地 Databricks 上的 Aegis 模型服务，并基于 Databricks / AWS Chalice 探索 Aperture 训练与模型管理。"
             },
             {
-              "en": "The platform launched successfully, powering daily email recommendations and notifications for 20M+ North American sports users.",
-              "zh": "平台推全上线，为 2000 万+北美体育用户提供日常邮件推荐与推送。"
+              "en": "Automated daily recommendation inference; the platform launched for 20M+ North American sports users, powering email recommendations and notifications.",
+              "zh": "实现推荐模型的天级例行推理；平台推全上线，为 2000 万+北美体育用户提供邮件推荐与推送。"
             }
           ],
-          "tags": ["Databricks", "AWS Chalice", "Inference", "MLOps"]
+          "tags": ["Spark", "Databricks", "AWS", "MLOps"]
         }
       ]
     },
@@ -274,8 +318,8 @@
         {
           "years": "2021.01—2021.12",
           "role": {
-            "en": "Cold start",
-            "zh": "冷启动"
+            "en": "Recall & cold start",
+            "zh": "召回与冷启动"
           },
           "title": {
             "en": "UCF & Lookalike recall",
@@ -304,8 +348,8 @@
             "zh": "服务架构"
           },
           "title": {
-            "en": "Recall and ecosystem",
-            "zh": "召回与生态"
+            "en": "Tiered traffic distribution & ecosystem",
+            "zh": "流量阶梯与生态"
           },
           "description": {
             "en": "Worked on the traffic-ladder distribution path from cold-start exploration and warm-up diffusion to full distribution, and refactored online recall serving.",
@@ -337,8 +381,8 @@
       "meta": "2019—2021",
       "layout": "internships",
       "description": {
-        "en": "Search and recommendation internships across ByteDance, NetEase Cloud Music, Microsoft Engineering, and Tencent.",
-        "zh": "曾在字节跳动、网易云音乐、微软工程院与腾讯参与搜广推相关实习。"
+        "en": "Internships at ByteDance, NetEase Cloud Music, Microsoft Engineering, and Tencent.",
+        "zh": "曾在字节跳动、网易云音乐、微软工程院与腾讯实习。"
       },
       "companies": [
         {
@@ -419,6 +463,30 @@
       }
     ],
     "writing": [
+      {
+        "type": "ARTICLE",
+        "url": "https://developer.nvidia.cn/blog/gr-inference-generative-recommendation-inference-system-design-performance-evaluation/",
+        "title": {
+          "en": "GR-Inference: system design and performance for generative recommendation",
+          "zh": "GR-Inference：面向生成式推荐的推理系统设计与性能评估"
+        },
+        "meta": {
+          "en": "Co-author · NVIDIA Technical Blog · 2026",
+          "zh": "联合作者 · NVIDIA 技术博客 · 2026"
+        }
+      },
+      {
+        "type": "OPEN SOURCE",
+        "url": "https://github.com/NVIDIA/cudnn-frontend/blob/develop/python/cudnn/deepseek_sparse_attention/README.md#acknowledgements",
+        "title": {
+          "en": "cuDNN Frontend · DeepSeek Indexer",
+          "zh": "cuDNN Frontend · DeepSeek Indexer"
+        },
+        "meta": {
+          "en": "Named kernel co-developer · NVIDIA · 2026",
+          "zh": "Kernel 共同开发者署名 · NVIDIA · 2026"
+        }
+      },
       {
         "type": "ARTICLE",
         "url": "https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/",
@@ -526,6 +594,8 @@
       "C++",
       "CUDA",
       "CUTLASS",
+      "CuTe DSL",
+      "cuDNN Frontend",
       "Python",
       "PyTorch",
       "Megatron-LM",
