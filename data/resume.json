@@ -286,17 +286,17 @@
             "zh": "系统性能优化"
           },
           "title": {
-            "en": "AI search · End-to-end RL post-training optimization",
-            "zh": "AI 搜索 · RL 后训练端到端优化"
+            "en": "AI search agents · End-to-end RL post-training optimization",
+            "zh": "AI 搜索智能体 · RL 后训练端到端优化"
           },
           "description": {
-            "en": "Profiled a customer’s training and multi-turn generation workloads and recommended reusing forward-pass results during training and tuning decode concurrency during generation.",
-            "zh": "分析客户的训练与多轮生成，建议训练时复用前向结果，生成时调整解码并发。"
+            "en": "Traced redundant forward passes in policy training and GPU idle time during multi-turn generation. Recommended reusing forward-pass results and reducing synchronization during decoding.",
+            "zh": "定位客户策略训练中的重复前向计算和多轮生成时的 GPU 空等，提出复用前向结果、减少解码同步的方案。"
           },
           "results": [
             {
-              "en": "Designed and benchmarked decode megakernels for attention, sparse indexing and MoE.",
-              "zh": "为注意力、稀疏索引和 MoE 设计并实测解码 megakernel。"
+              "en": "Built and benchmarked CUDA megakernels for attention, sparse indexing and mixture-of-experts layers during decoding.",
+              "zh": "开发并实测三类解码 megakernel，覆盖注意力、稀疏索引和 MoE。"
             }
           ],
           "tags": ["RL post-training", "Nsight Systems", "CUDA", "Megakernel"],
