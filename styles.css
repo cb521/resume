@@ -496,7 +496,7 @@ button.text-button {
   border-radius: var(--radius);
 }
 
-.work-card h3,
+.work-card-title,
 .wide-card h3,
 .media-card h3 {
   margin: 0;
@@ -622,10 +622,23 @@ button.text-button {
 }
 
 @media screen and (min-width: 821px) {
+  .career-entry > .work-topic,
   .career-entry > .work-grid,
   .career-entry > .wide-card {
     margin-left: 72px;
   }
+}
+
+.work-topic + .work-topic {
+  margin-top: 28px;
+}
+
+.work-topic-title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 650;
+  break-after: avoid-page;
 }
 
 .work-grid {
@@ -667,7 +680,7 @@ button.text-button {
   text-transform: uppercase;
 }
 
-.work-card h3 {
+.work-card-title {
   font-size: 18px;
   font-weight: 600;
 }
@@ -1588,6 +1601,15 @@ footer p {
 
   .company-heading--spaced {
     margin-top: 6mm;
+  }
+
+  .work-topic + .work-topic {
+    margin-top: 5mm;
+  }
+
+  .work-topic-title {
+    margin-bottom: 2mm;
+    font-size: 13pt;
   }
 
   .career-timeline {

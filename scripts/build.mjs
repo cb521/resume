@@ -182,14 +182,18 @@ function renderWorkLink(link) {
   return `<a class="card-link" href="${escapeHtml(link.url)}"${externalAttributes(link.url)}>${localizedInline(link.label)}${externalIcon}</a>`;
 }
 
-function renderWorkCard(project) {
+function renderWorkCard(project, headingTag) {
   return `<article class="work-card${project.featured ? " work-card--featured" : ""} reveal">
             <div class="card-topline"><span>${escapeHtml(project.years)}</span><span class="role-pill">${localizedInline(project.role)}</span></div>
-            <h3>${localizedInline(project.title)}</h3>
+            <${headingTag} class="work-card-title">${localizedInline(project.title)}</${headingTag}>
             ${localizedBlock("p", project.description)}
             <ul class="result-list">${project.results.map((result) => `<li>${localizedInline(result)}</li>`).join("")}</ul>
             <div class="card-footer">${renderTags(project.tags)}${renderWorkLink(project.link)}</div>
           </article>`;
+}
+
+function renderWorkGrid(projects, headingTag) {
+  return `<div class="work-grid">${projects.map((project) => renderWorkCard(project, headingTag)).join("\n")}</div>`;
 }
 
 function renderWideCard(project) {
@@ -220,8 +224,16 @@ function renderWork(data) {
   const careerEntries = careerGroups.map((group) => {
     const heading = renderCompanyHeading(group, false);
     let projects;
-    if (group.layout === "grid") {
-      projects = `<div class="work-grid">${group.projects.map(renderWorkCard).join("\n")}</div>`;
+    if (group.topics) {
+      projects = Object.entries(group.topics).map(([key, title]) => {
+        const items = group.projects.filter((project) => project.topic === key);
+        return `<section class="work-topic">
+          <h3 class="work-topic-title">${localizedInline(title)}</h3>
+          ${renderWorkGrid(items, "h4")}
+        </section>`;
+      }).join("\n");
+    } else if (group.layout === "grid") {
+      projects = renderWorkGrid(group.projects, "h3");
     } else if (group.layout === "wide") {
       projects = group.projects.map(renderWideCard).join("\n        ");
     } else {
@@ -395,9 +407,19 @@ async function validateData(data) {
     requireText(group.logo, `${label}.logo`);
     requireText(group.logoKey, `${label}.logoKey`);
     requireArray(group.projects, `${label}.projects`, { allowEmpty: false });
+    if (group.topics) {
+      requireValue(group.layout === "grid", `${label}.topics requires grid layout`);
+      for (const [key, title] of Object.entries(group.topics)) {
+        requireLocalizedText(title, `${label}.topics.${key}`);
+        requireValue(group.projects.some((project) => project.topic === key), `${label}.topics.${key} has no projects`);
+      }
+    }
 
     group.projects.forEach((project, projectIndex) => {
       const projectLabel = `${label}.projects[${projectIndex}]`;
+      if (group.topics) {
+        requireValue(Object.hasOwn(group.topics, project.topic), `${projectLabel}.topic must match a listed topic`);
+      }
       requireLocalizedText(project.role, `${projectLabel}.role`);
       requireLocalizedText(project.title, `${projectLabel}.title`);
       requireLocalizedText(project.description, `${projectLabel}.description`);
