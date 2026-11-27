@@ -185,7 +185,6 @@
         {
           "topic": "recsys",
           "years": "2025.10—2026.03",
-          "role": "Tech Lead",
           "title": {
             "en": "OneRec end-to-end training",
             "zh": "OneRec 端到端训练优化"
@@ -216,7 +215,6 @@
         {
           "topic": "recsys",
           "years": "2023.08—2023.12",
-          "role": "Tech Lead",
           "title": {
             "en": "GPU-native ANN search",
             "zh": "GPU 原生 ANN 检索"

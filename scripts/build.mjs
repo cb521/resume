@@ -183,9 +183,13 @@ function renderWorkLink(link) {
   return `<a class="card-link" href="${escapeHtml(link.url)}"${externalAttributes(link.url)}>${localizedInline(link.label)}${externalIcon}</a>`;
 }
 
+function renderProjectRole(role) {
+  return role ? `<span class="role-pill">${localizedInline(role)}</span>` : "";
+}
+
 function renderWorkCard(project, headingTag) {
   return `<article class="work-card${project.featured ? " work-card--featured" : ""} reveal">
-            <div class="card-topline"><span>${escapeHtml(project.years)}</span><span class="role-pill">${localizedInline(project.role)}</span></div>
+            <div class="card-topline"><span>${escapeHtml(project.years)}</span>${renderProjectRole(project.role)}</div>
             <${headingTag} class="work-card-title">${localizedInline(project.title)}</${headingTag}>
             ${localizedBlock("p", project.description)}
             <ul class="result-list">${project.results.map((result) => `<li>${localizedInline(result)}</li>`).join("")}</ul>
@@ -199,7 +203,7 @@ function renderWorkGrid(projects, headingTag) {
 
 function renderWideCard(project) {
   return `<article class="wide-card reveal">
-          <div><span class="role-pill">${localizedInline(project.role)}</span><h3>${localizedInline(project.title)}</h3></div>
+          <div>${renderProjectRole(project.role)}<h3>${localizedInline(project.title)}</h3></div>
           ${localizedBlock("p", project.description)}
           <div class="wide-card-result"><strong>${escapeHtml(project.metric.value)}</strong>${localizedInline(project.metric.label)}</div>
         </article>`;
@@ -427,7 +431,7 @@ async function validateData(data) {
       if (group.topics) {
         requireValue(Object.hasOwn(group.topics, project.topic), `${projectLabel}.topic must match a listed topic`);
       }
-      requireLocalizedText(project.role, `${projectLabel}.role`);
+      if (project.role !== undefined) requireLocalizedText(project.role, `${projectLabel}.role`);
       requireLocalizedText(project.title, `${projectLabel}.title`);
       requireLocalizedText(project.description, `${projectLabel}.description`);
       if (group.layout === "grid") {
