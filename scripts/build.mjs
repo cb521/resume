@@ -95,8 +95,9 @@ function renderPageChrome(data) {
   const navigation = [
     ["home", "Home", "首页"],
     ["work", "Work Experience", "工作经历"],
+    ["education", "Education", "教育背景"],
     ["speaking", "Sharing", "分享"],
-    ["background", "Education & Publications", "教育与论文"],
+    ["background", "Publications & Awards", "论文与奖项"],
     ["contact", "Contact", "联系我"],
   ];
 
@@ -283,7 +284,7 @@ function renderSpeaking(data) {
 }
 
 function renderEducation(item) {
-  return `<article class="education-card"><span class="education-years">${escapeHtml(item.years)}</span><h4>${localizedInline(item.school)}</h4><p>${localizedInline(item.degree)}</p></article>`;
+  return `<article class="education-card"><span class="education-years">${escapeHtml(item.years)}</span><h3>${localizedInline(item.school)}</h3><p>${localizedInline(item.degree)}</p></article>`;
 }
 
 function renderPublication(item) {
@@ -296,12 +297,10 @@ function renderPublication(item) {
 function renderBackground(data) {
   const background = data.background;
   return `<section class="section" id="background">
-        ${renderSectionHeading({ en: "Education & Publications", zh: "教育与论文" })}
+        ${renderSectionHeading({ en: "Publications & Awards", zh: "论文与奖项" })}
         <div class="background-grid">
           <div class="background-column reveal">
-            <h3 class="subsection-title"><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></h3>
-            ${background.education.map(renderEducation).join("\n            ")}
-            <h3 class="subsection-title subsection-title--spaced"><span class="lang-en">Selected Recognition</span><span class="lang-zh">部分奖项</span></h3>
+            <h3 class="subsection-title"><span class="lang-en">Selected Recognition</span><span class="lang-zh">部分奖项</span></h3>
             <ul class="award-list">${background.recognition.map((item) => `<li><strong>${escapeHtml(item.year)}</strong>${localizedInline(item.name)}</li>`).join("")}</ul>
           </div>
           <div class="background-column reveal">
@@ -339,6 +338,11 @@ function renderBody(data) {
       ${renderHero(data)}
 
       ${renderWork(data)}
+
+      <section class="section" id="education">
+        ${renderSectionHeading({ en: "Education", zh: "教育背景" })}
+        <div class="education-grid reveal">${data.background.education.map(renderEducation).join("\n          ")}</div>
+      </section>
 
       ${renderSpeaking(data)}
 

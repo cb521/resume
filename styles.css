@@ -882,6 +882,7 @@ button.text-button {
   max-height: 40px;
 }
 
+.education-grid,
 .media-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1007,10 +1008,6 @@ a.media-card:hover,
   padding: 20px;
 }
 
-.education-card + .education-card {
-  margin-top: 10px;
-}
-
 .education-years {
   color: var(--accent);
   font-size: 11px;
@@ -1018,7 +1015,7 @@ a.media-card:hover,
   letter-spacing: 0.06em;
 }
 
-.education-card h4,
+.education-card h3,
 .publication-card h4 {
   margin: 7px 0 3px;
   font-size: 16px;
@@ -1346,6 +1343,7 @@ footer p {
   }
 
   .work-grid,
+  .education-grid,
   .media-grid,
   .background-grid {
     grid-template-columns: 1fr;
