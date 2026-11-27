@@ -199,8 +199,8 @@
           },
           "results": [
             {
-              "en": "Compared with the original FlashAttention-2, cross-attention ran 1.75× faster forward and 1.33× faster backward on Ampere. On Hopper, the speedups were 2.42× forward and 1.95× backward. [GTC benchmark](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)",
-              "zh": "与原版 FlashAttention-2 相比，Ampere 上前向、反向分别加速 1.75 倍和 1.33 倍，Hopper 上分别加速 2.42 倍和 1.95 倍。[GTC 实测图](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)"
+              "en": "On Ampere, cross-attention achieved a 1.75× forward speedup and a 1.33× backward speedup over the original FlashAttention-2. [GTC benchmark](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)",
+              "zh": "与原版 FlashAttention-2 相比，Ampere 上的交叉注意力前向加速 1.75 倍，反向加速 1.33 倍。[GTC 实测图](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)"
             },
             {
               "en": "Presented the work at GTC San Jose 2026.",
