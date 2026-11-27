@@ -34,8 +34,8 @@
       "zh": "你好，我是柴斌。"
     },
     "lead": {
-      "en": "I have **five years of full-stack experience**, spanning **algorithms for search, ads and recommendations**, **business architecture and shared platforms**, and **GPU kernel development and end-to-end optimization of training and inference systems**. I’ve collaborated closely with major tech companies in China and abroad on engineering projects.",
-      "zh": "我有 **5 年的全栈工作经验**，涵盖**搜广推算法**、**中层业务架构与中台建设**，以及**GPU 算子开发和训推 E2E 系统优化**；同时，我与国内外大厂有丰富的技术合作经验。"
+      "en": "I have **five years of full-stack engineering experience**. At Baidu, I worked on **algorithms for search, ads and recommendations**. I then helped build a **machine learning platform** at HULU. At NVIDIA, I now **develop GPU kernels and optimize training and inference systems end to end**, collaborating with engineering teams at major tech companies in China and abroad.",
+      "zh": "我有 **5 年全栈工程经验**，先后在百度做**搜广推算法研发**、在 HULU 参与**机器学习平台建设**。目前在 NVIDIA，我专注于 **GPU 算子开发和训推 E2E 系统优化**，也与国内外多家大型科技公司开展技术合作。"
     },
     "intro": [
       {
