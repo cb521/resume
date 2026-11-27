@@ -659,8 +659,8 @@
         },
         "title": "RIG: GPU Inference Framework for Long-Context, Short-Decode, Large-Beam Generative Recommendation",
         "venue": {
-          "en": "FRecSys 2026 workshop, co-located with ACM SIGOPS ATC (CCF-A for the main conference only)",
-          "zh": "FRecSys 2026 研讨会 · 同期 ACM SIGOPS ATC 主会为 CCF-A"
+          "en": "FRecSys @ ATC (main conference: CCF-A) · 2026",
+          "zh": "FRecSys @ ATC（主会 CCF-A）· 2026"
         }
       }
     ],
