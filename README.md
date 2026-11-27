@@ -65,4 +65,4 @@ python3 -m http.server 8080 -d dist
 - `scripts/build.mjs`：读取数据并生成网页。
 - `.github/workflows/pages.yml`：自动发布到 GitHub Pages。
 
-公开网页已隐藏原简历中的手机号、出生日期和性别，目前会公开邮箱 `1095135384@qq.com`。
+公开网页展示简历中的手机号和邮箱，出生日期和性别保留在原简历中。

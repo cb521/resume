@@ -10,9 +10,10 @@
       "en": "Bin Chai — GPU Performance Engineer",
       "zh": "柴斌 — GPU 性能工程师"
     },
-    "description": "Bin Chai is a senior software engineer at NVIDIA with around five years of full-stack experience spanning algorithm strategy, business architecture and shared platforms, and GPU performance optimization and acceleration.",
-    "ogDescription": "Around five years of full-stack experience in algorithm strategy, business architecture and shared platforms, and GPU performance optimization and acceleration.",
+    "description": "Bin Chai is a senior software engineer at NVIDIA with around five years of full-stack experience spanning algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
+    "ogDescription": "Around five years of full-stack experience in algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
     "email": "1095135384@qq.com",
+    "phone": "+86 13717798912",
     "location": {
       "en": "Beijing, China",
       "zh": "中国北京"
@@ -33,8 +34,8 @@
       "zh": "你好，我是柴斌。"
     },
     "lead": {
-      "en": "I have around **five years of full-stack experience**, spanning **high-level algorithm strategy**, **business architecture and shared platforms**, and **low-level GPU performance optimization and acceleration**. Through my work with major tech companies in China and abroad, I’ve gained extensive experience providing technical support.",
-      "zh": "我有 **5 年左右的全栈工作经验**，涵盖**上层算法策略**、**中层业务架构与中台建设**，以及**底层 GPU 性能优化与加速**；同时，我在与国内外大厂的合作中积累了丰富的技术支持经验。"
+      "en": "I have around **five years of full-stack experience**, spanning **algorithms for search, ads and recommendations**, **business architecture and shared platforms**, and **low-level GPU performance optimization and acceleration**. Through my work with major tech companies in China and abroad, I’ve gained extensive experience providing technical support.",
+      "zh": "我有 **5 年左右的全栈工作经验**，涵盖**搜广推算法**、**中层业务架构与中台建设**，以及**底层 GPU 性能优化与加速**；同时，我在与国内外大厂的合作中积累了丰富的技术支持经验。"
     },
     "intro": [
       {
@@ -61,8 +62,8 @@
       {
         "icon": "🧠",
         "text": {
-          "en": "**Recommendation Algorithms** (cross-domain ICF, UCF / Lookalike recall, cold start and traffic allocation): recommendation development and online experiments for Baidu Feed.",
-          "zh": "**算法策略**（跨域 ICF 召回、UCF / Lookalike 召回、冷启动与流量分发）：百度信息流推荐策略研发与线上实验。"
+          "en": "**Search, Ads and Recommendation Algorithms** (cross-domain ICF, UCF / Lookalike recall, cold start and traffic allocation): recommendation development and online experiments for Baidu Feed.",
+          "zh": "**搜广推算法**（跨域 ICF 召回、UCF / Lookalike 召回、冷启动与流量分发）：百度信息流推荐策略研发与线上实验。"
         }
       }
     ]
@@ -363,8 +364,8 @@
     {
       "company": "Baidu",
       "meta": {
-        "en": "Recommendation Algorithm Engineer · Feed · Jul 2021—Aug 2022",
-        "zh": "推荐算法工程师 · Feed · 2021.07—2022.08"
+        "en": "Algorithm Engineer, Search, Ads and Recommendations · Feed · Jul 2021—Aug 2022",
+        "zh": "搜广推算法工程师 · Feed · 2021.07—2022.08"
       },
       "logo": "assets/logos/baidu-mark.svg",
       "logoKey": "baidu",
@@ -456,8 +457,8 @@
     },
     {
       "company": {
-        "en": "Earlier Internships",
-        "zh": "早期实习"
+        "en": "Internship Experience",
+        "zh": "实习经历"
       },
       "meta": "2019—2021",
       "layout": "internships",
@@ -652,6 +653,23 @@
       }
     ],
     "publications": [
+      {
+        "role": {
+          "en": "Co-author · Accepted",
+          "zh": "合著 · 已录用"
+        },
+        "title": "MTServe: Efficient Serving for Generative Recommendation Models with Hierarchical Caches",
+        "venue": "VLDB 2027 Research Track · PVLDB Vol. 20 · CCF-A"
+      },
+      {
+        "url": "https://atcworkshop-rec.github.io/#program",
+        "role": {
+          "en": "First author · Accepted",
+          "zh": "第一作者 · 已录用"
+        },
+        "title": "RIG: GPU Inference Framework for Long-Context, Short-Decode, Large-Beam Generative Recommendation",
+        "venue": "FRecSys 2026 · Workshop at ACM SIGOPS ATC"
+      },
       {
         "url": "https://doi.org/10.1016/j.procs.2021.02.086",
         "role": {

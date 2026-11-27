@@ -325,6 +325,15 @@ main {
   line-height: 1.2;
 }
 
+.hero-contact {
+  margin: 0 0 14px;
+  font-size: 15px;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
+}
+
 .wave {
   display: inline-block;
   margin-left: 12px;
@@ -1058,7 +1067,7 @@ a.media-card:hover,
   margin-top: 10px;
 }
 
-.publication-card:hover {
+a.publication-card:hover {
   border-color: #c5c3ba;
   box-shadow: 0 12px 30px rgba(37, 35, 30, 0.07);
   transform: translateY(-2px);
@@ -1510,11 +1519,14 @@ footer p {
     font-size: 32pt;
   }
 
-  .print-contact {
-    display: block;
+  .hero-contact {
     margin: 0 0 4mm;
     color: #555;
     font-size: 9pt;
+  }
+
+  .print-contact {
+    display: inline;
   }
 
   .lead {

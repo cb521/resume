@@ -153,7 +153,7 @@ function renderHero(data) {
           <span class="lang-zh">${escapeHtml(hero.greeting.zh)}<span class="wave" aria-hidden="true">👋</span></span>
         </h1>
 
-        <p class="print-contact">${escapeHtml(site.name.en)} · ${escapeHtml(site.location.en)} · ${escapeHtml(site.email)}</p>
+        <p class="hero-contact"><span class="print-contact">${escapeHtml(site.name.en)} · ${localizedInline(site.location)} · ${escapeHtml(site.email)}${site.phone ? " · " : ""}</span>${site.phone ? `<a href="tel:${escapeHtml(site.phone.replaceAll(" ", ""))}">${escapeHtml(site.phone)}</a>` : ""}</p>
 
         <div class="hero-copy reveal">
           ${localizedBlock("p", hero.lead, "lead", { markdown: true })}
@@ -287,10 +287,10 @@ function renderEducation(item) {
 }
 
 function renderPublication(item) {
-  return `<a class="publication-card" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>
-              <span class="publication-role">${localizedInline(item.role)}</span>
-              <h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.venue)}</p>${externalIcon}
-            </a>`;
+  const content = `<span class="publication-role">${localizedInline(item.role)}</span>
+              <h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.venue)}</p>`;
+  if (!item.url) return `<article class="publication-card">${content}</article>`;
+  return `<a class="publication-card" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${content}${externalIcon}</a>`;
 }
 
 function renderBackground(data) {
@@ -379,6 +379,9 @@ async function validateData(data) {
   requireValue(isLocalized(data.site?.name), "site.name must contain en and zh");
   requireValue(isLocalized(data.site?.title), "site.title must contain en and zh");
   requireValue(typeof data.site?.email === "string" && data.site.email.includes("@"), "site.email is invalid");
+  if (data.site.phone !== undefined) {
+    requireValue(typeof data.site.phone === "string" && /^\+[1-9]\d{1,14}$/.test(data.site.phone.replaceAll(" ", "")), "site.phone must be an international phone number");
+  }
   requireUrl(data.site.url, "site.url");
   requireUrl(data.site.authorProfile, "site.authorProfile");
   requireLocalizedText(data.site.location, "site.location");
@@ -474,7 +477,7 @@ async function validateData(data) {
     requireLocalizedText(item.name, `background.recognition[${index}].name`);
   });
   data.background.publications.forEach((item, index) => {
-    requireUrl(item.url, `background.publications[${index}].url`);
+    if (item.url !== undefined) requireUrl(item.url, `background.publications[${index}].url`);
     requireLocalizedText(item.role, `background.publications[${index}].role`);
     requireText(item.title, `background.publications[${index}].title`);
     requireText(item.venue, `background.publications[${index}].venue`);
