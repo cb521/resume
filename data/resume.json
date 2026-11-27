@@ -303,21 +303,25 @@
             "zh": "机器学习平台与推荐服务"
           },
           "description": {
-            "en": "Helped build an ML platform from the ground up for Disney Sports and ESPN, connecting data and features with model training, management and production inference.",
-            "zh": "面向 Disney Sports、ESPN，从 0 到 1 参与搭建机器学习平台，串联数据特征、模型训练、管理与线上推理。"
+            "en": "Helped build an internal ML platform for Disney Sports and ESPN. It gave data scientists tools to produce and extract features and run a recommendation model for email and push notifications.",
+            "zh": "参与从零搭建 Disney Sports 和 ESPN 的机器学习平台，让数据科学团队能生产和提取特征，并用推荐模型为邮件和消息推送筛选内容。"
           },
           "results": [
             {
-              "en": "Contributed to Sports Data Mart and feature ETL using Spark / EMR, and developed Vulcan Lambda services and Python SDK components.",
-              "zh": "基于 Spark / EMR 参与 Sports Data Mart 与特征 ETL 建设，并开发 Vulcan Lambda 服务和 Python SDK。"
+              "en": "Researched features for Sports Data Mart, contributed to warehouse schema design, and developed and tested Spark ETL jobs that produced recommendation features for data scientists.",
+              "zh": "在 Sports Data Mart 参与特征调研和数仓设计，开发、测试 Spark ETL 作业，为数据科学团队产出推荐特征。"
             },
             {
-              "en": "Productionized Aegis serving on Databricks and prototyped Aperture training and model management with Databricks / AWS Chalice.",
-              "zh": "落地 Databricks 上的 Aegis 模型服务，并基于 Databricks / AWS Chalice 探索 Aperture 训练与模型管理。"
+              "en": "Developed Lambda services and Python SDK components for Vulcan and refactored its EMR jobs to support feature extraction and model management.",
+              "zh": "在 Vulcan 开发服务端 Lambda 和客户端 Python SDK 子模块，重构 EMR 作业，支持特征抽取和模型管理。"
             },
             {
-              "en": "Automated daily recommendation inference; the platform launched for 20M+ North American sports users, powering email recommendations and notifications.",
-              "zh": "实现推荐模型的天级例行推理；平台推全上线，为 2000 万+北美体育用户提供邮件推荐与推送。"
+              "en": "Deployed Aegis on Databricks and automated daily inference for the production recommendation model. The platform powered personalized email and push notifications for over 20 million North American sports users.",
+              "zh": "在 Databricks 上部署 Aegis 模型服务，让推荐模型每日自动推理。平台上线后覆盖超过 2,000 万北美体育用户，为邮件推荐和消息推送提供结果。"
+            },
+            {
+              "en": "Built an Aperture prototype on Databricks and AWS Chalice to train, store and deploy models.",
+              "zh": "用 Databricks 和 AWS Chalice 搭建 Aperture 原型，验证模型训练、存储和部署流程。"
             }
           ],
           "tags": ["Spark", "Databricks", "AWS", "MLOps"]
@@ -345,13 +349,13 @@
             "zh": "跨域 ICF 召回"
           },
           "description": {
-            "en": "Combined Toutiao and Baidu Feed author-fan graphs, then used DeepWalk embeddings to build ICF dictionaries for latent-fan recall and new-author onboarding.",
-            "zh": "融合头条与手百 Feed 作者—粉丝关注关系，基于 DeepWalk 构建跨域图向量与 ICF 召回词典，用于作者隐粉召回和新作者引入。"
+            "en": "Combined author–follower relationships from Toutiao and Baidu's mobile feed into one graph. Used DeepWalk embeddings to build an item-based collaborative filtering (ICF) lookup that connected authors with potential followers.",
+            "zh": "把头条和手机百度 Feed 的作者、粉丝关注关系合成一张图，用 DeepWalk 学习图向量并构建 ICF 召回词典，为作者找到可能感兴趣的用户。"
           },
           "results": [
             {
-              "en": "Lifted Feed DAU by +0.05% and total media time by +0.17%, both statistically significant.",
-              "zh": "Feed DAU 相对提升 +0.05%，总媒体时长相对提升 +0.17%，均达到显著。"
+              "en": "Feed daily active users increased by 0.05% and total media time by 0.17%. Both relative gains were statistically significant.",
+              "zh": "Feed 日活用户数相对提升 0.05%，总媒体时长相对提升 0.17%，两项提升均显著。"
             },
             {
               "en": "Provided operations and product teams with cases for onboarding new authors.",
@@ -371,17 +375,17 @@
             "zh": "UCF 与 Lookalike 召回"
           },
           "description": {
-            "en": "Used Swing to mine domain-similar KOLs, built SNDB similar-user storage and click indexes, and fused KOL voting with Lookalike and author recall.",
-            "zh": "基于 Swing 挖掘用户领域相似 KOL，构建 SNDB 相似用户存储与历史点击索引，并融合 KOL 投票、Lookalike 与作者召回。"
+            "en": "Used Swing to identify creators in similar interest areas. Stored similar-user relationships in SNDB and indexed historical clicks. Combined creator votes, Lookalike audiences and author-based recall to select candidates for cold-start distribution.",
+            "zh": "用 Swing 挖掘兴趣领域相近的 KOL，在 SNDB 中存储相似用户关系，并为历史点击建立索引。冷启动分发时，结合 KOL 投票、Lookalike 人群和作者召回筛选候选。"
           },
           "results": [
             {
-              "en": "Raised cold-start success by +2.46%, +14.74%, and +2.96% across three content types.",
-              "zh": "三类内容冷启动成功率分别相对提升 +2.46%、+14.74% 和 +2.96%。"
+              "en": "Cold-start success rates rose by 2.46%, 14.74% and 2.96% across three content types (relative gains).",
+              "zh": "三类内容的冷启动成功率分别相对提升 2.46%、14.74% 和 2.96%。"
             },
             {
-              "en": "Lookalike recall for the guaranteed-distribution queue lifted media time +0.33%, distribution +0.35%, and completion from 28.8% to 31.7%.",
-              "zh": "保量队列 Lookalike 召回带来媒体时长 +0.33%、分发量 +0.35%，整体完成率由 28.8% 提升至 31.7%。"
+              "en": "Adding Lookalike recall to the guaranteed-distribution queue raised media time by 0.33% and distribution volume by 0.35%. Its overall completion rate rose from 28.8% to 31.7%.",
+              "zh": "在保量队列引入 Lookalike 召回后，媒体时长提升 0.33%，分发量提升 0.35%，整体完成率从 28.8% 提升到 31.7%。"
             }
           ],
           "tags": ["Swing", "SNDB", "Lookalike"]
@@ -397,8 +401,8 @@
             "zh": "流量阶梯与生态"
           },
           "description": {
-            "en": "Worked on the traffic-ladder distribution path from cold-start exploration and warm-up diffusion to full distribution, and refactored online recall serving.",
-            "zh": "参与冷启试探、预热扩散、全面分发与推爆等流量阶梯链路建设，并重构在线召回服务架构。"
+            "en": "Worked on the feed's staged distribution of new content, from initial cold-start traffic through wider distribution and promotion. Refactored the online recall service that supplied candidates to these stages.",
+            "zh": "参与建设新内容的流量阶梯，从冷启动试探、预热扩散到全面分发和推爆，并重构支撑分发的在线召回服务。"
           },
           "results": [
             {
@@ -407,7 +411,7 @@
             },
             {
               "en": "A related acquisition-queue refactor saved 10 additional machines and improved operations case triage.",
-              "zh": "相关采买队列重构额外节省 10 台机器，并提升运营 Case 排查效率。"
+              "zh": "重构采买队列，额外节省 10 台机器，也方便运营团队排查分发问题。"
             },
             {
               "en": "Selected as a Baidu quarterly best project and nominated for the company's top annual award.",

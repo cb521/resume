@@ -1,7 +1,7 @@
 const root = document.documentElement;
 const body = document.body;
 const languageButtons = document.querySelectorAll(".language-button");
-const printButtons = document.querySelectorAll(".print-button");
+const printButtons = document.querySelectorAll("button.print-button");
 const menuButton = document.querySelector(".menu-button");
 const overlay = document.querySelector(".drawer-overlay");
 const navLinks = [...document.querySelectorAll(".site-nav a")];

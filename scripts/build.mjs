@@ -137,9 +137,8 @@ function renderPageChrome(data) {
           <button class="language-button" type="button" aria-label="Switch language">
             ${languageIcon}<span class="lang-en">中文</span><span class="lang-zh">English</span>
           </button>
-          <button class="print-button" type="button">
-            ${printIcon}<span class="lang-en">Save as PDF</span><span class="lang-zh">保存为 PDF</span>
-          </button>
+          <div class="lang-en"><button class="print-button" type="button">${printIcon}Save as PDF</button></div>
+          <div class="lang-zh"><a class="print-button" href="./assets/Bin_Chai_GPU_Resume_CN.pdf" download>${printIcon}下载中文 PDF</a></div>
         </div>
 
         <p class="sidebar-note"><span class="status-dot"></span>${localizedInline(status)}</p>
