@@ -188,7 +188,10 @@ function renderProjectRole(role) {
 }
 
 function renderWorkCard(project, headingTag) {
-  if (project.summary) return localizedBlock("p", project.summary, "project-summary", { markdown: true });
+  if (project.summary) {
+    const heading = project.title ? `<${headingTag}>${localizedInline(project.title)}</${headingTag}>` : "";
+    return `<div class="project-summary">${heading}${localizedBlock("p", project.summary, "", { markdown: true })}</div>`;
+  }
   return `<article class="work-card${project.featured ? " work-card--featured" : ""} reveal">
             <div class="card-topline"><span>${escapeHtml(project.years)}</span>${renderProjectRole(project.role)}</div>
             <${headingTag} class="work-card-title">${localizedInline(project.title)}</${headingTag}>
@@ -283,8 +286,8 @@ function renderWritingItem(item) {
 function renderSpeaking(data) {
   return `<section class="section" id="speaking">
         ${renderSectionHeading({ en: "Technical Sharing", zh: "技术分享" })}
-        <div class="media-grid">${data.speaking.events.map(renderEvent).join("\n")}</div>
-        <div class="writing-list">${data.speaking.writing.map(renderWritingItem).join("\n")}</div>
+        <ul class="media-grid">${data.speaking.events.map((event) => `<li>${renderEvent(event)}</li>`).join("\n")}</ul>
+        <ul class="writing-list">${data.speaking.writing.map((item) => `<li>${renderWritingItem(item)}</li>`).join("\n")}</ul>
       </section>`;
 }
 
@@ -293,8 +296,8 @@ function renderEducation(item) {
 }
 
 function renderPublication(item) {
-  const content = `<span class="publication-role">${localizedInline(item.role)}</span>
-              <h3>${escapeHtml(item.title)}</h3><p>${localizedInline(item.venue)}</p>`;
+  const content = `<h3>${escapeHtml(item.title)}</h3><span class="publication-role">${localizedInline(item.role)}</span>
+              <p>${localizedInline(item.venue)}</p>`;
   if (!item.url) return `<article class="publication-card">${content}</article>`;
   return `<a class="publication-card" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${content}${externalIcon}</a>`;
 }
@@ -349,7 +352,7 @@ function renderBody(data) {
 
       <section class="section" id="publications">
         ${renderSectionHeading({ en: "Publications", zh: "论文" })}
-        ${data.background.publications.map(renderPublication).join("\n        ")}
+        <ol class="publication-list">${data.background.publications.map((item) => `<li>${renderPublication(item)}</li>`).join("\n        ")}</ol>
       </section>
 
       ${renderSpeaking(data)}
@@ -436,6 +439,7 @@ async function validateData(data) {
         requireValue(Object.hasOwn(group.topics, project.topic), `${projectLabel}.topic must match a listed topic`);
       }
       if (group.layout === "grid" && project.summary !== undefined) {
+        if (project.title !== undefined) requireLocalizedText(project.title, `${projectLabel}.title`);
         requireLocalizedText(project.summary, `${projectLabel}.summary`);
         return;
       }

@@ -668,6 +668,17 @@ button.text-button {
   text-decoration: underline;
 }
 
+.project-summary h4,
+.project-summary h3 {
+  margin: 0 0 3px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.project-summary p {
+  margin: 0;
+}
+
 .work-card {
   display: flex;
   flex-direction: column;
@@ -943,6 +954,13 @@ a.media-card:hover,
   font-size: 18px;
 }
 
+.media-grid,
+.writing-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .writing-list {
   display: grid;
   gap: 10px;
@@ -1068,8 +1086,11 @@ a.media-card:hover,
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.publication-card + .publication-card {
-  margin-top: 10px;
+.publication-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-inline-start: 1.6rem;
 }
 
 a.publication-card:hover {

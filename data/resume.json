@@ -244,9 +244,13 @@
         },
         {
           "topic": "recsys",
+          "title": {
+            "en": "Feature processing for Spark and Flink",
+            "zh": "Spark 与 Flink 特征计算"
+          },
           "summary": {
-            "en": "Developed GPU feature-processing plugins for Spark batch jobs and Flink streams, merged into [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540).",
-            "zh": "为 Spark 批处理和 Flink 流处理开发 GPU 特征计算插件，已合入 [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540)。"
+            "en": "Developed GPU plugins for batch and stream processing, merged into [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540).",
+            "zh": "开发批处理和流处理的 GPU 插件，已合入 [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540)。"
           }
         },
         {
