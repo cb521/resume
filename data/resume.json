@@ -290,29 +290,21 @@
             "zh": "AI 搜索 · RL 后训练端到端优化"
           },
           "description": {
-            "en": "Used Nsight Systems to trace how a customer’s AI search agent spent time during policy training and multi-turn generation.",
-            "zh": "用 Nsight Systems 分析客户的 AI 搜索智能体在策略训练和多轮生成两个阶段的耗时。"
+            "en": "Profiled a customer’s training and multi-turn generation workloads and recommended reusing forward-pass results during training and tuning decode concurrency during generation.",
+            "zh": "分析客户的训练与多轮生成，建议训练时复用前向结果，生成时调整解码并发。"
           },
           "results": [
             {
-              "en": "Identified redundant forward passes, CPU synchronization waits, and limited overlap between computation and communication. Recommended reducing repeated log-probability calculations and tuning decode concurrency.",
-              "zh": "定位重复前向计算、CPU 同步等待和计算与通信重叠不足的问题，建议减少重复的 log-prob 计算并调整解码并发度。"
-            },
-            {
-              "en": "Designed and benchmarked megakernels for attention, sparse indexing, and MoE during decoding. Compared how different assignments of work to thread blocks affected performance.",
-              "zh": "设计并实测解码阶段的注意力、稀疏索引和 MoE megakernel，对比不同线程块分工下的性能。"
-            },
-            {
-              "en": "Contributed RL post-training components for slime and verl to NVIDIA/recsys-examples.",
-              "zh": "将适配 slime 和 verl 的 RL 后训练优化组件提交至 NVIDIA/recsys-examples。"
+              "en": "Designed and benchmarked decode megakernels for attention, sparse indexing and MoE.",
+              "zh": "为注意力、稀疏索引和 MoE 设计并实测解码 megakernel。"
             }
           ],
           "tags": ["RL post-training", "Nsight Systems", "CUDA", "Megakernel"],
           "link": {
             "url": "https://github.com/NVIDIA/recsys-examples/pull/539",
             "label": {
-              "en": "Open-source RL components",
-              "zh": "开源后训练组件"
+              "en": "Open-source components for slime and verl",
+              "zh": "slime / verl 开源组件"
             }
           }
         }
