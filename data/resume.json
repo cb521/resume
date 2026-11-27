@@ -662,24 +662,6 @@
           "en": "FRecSys 2026 workshop, co-located with ACM SIGOPS ATC (CCF-A for the main conference only)",
           "zh": "FRecSys 2026 研讨会 · 同期 ACM SIGOPS ATC 主会为 CCF-A"
         }
-      },
-      {
-        "url": "https://doi.org/10.1016/j.procs.2021.02.086",
-        "role": {
-          "en": "First author",
-          "zh": "第一作者"
-        },
-        "title": "Optimization of workpiece detection model based on channel pruning and fixed-point quantization",
-        "venue": "Procedia Computer Science 183 · 2021"
-      },
-      {
-        "url": "https://doi.org/10.1016/j.procs.2021.02.058",
-        "role": {
-          "en": "Third author",
-          "zh": "第三作者"
-        },
-        "title": "Application of deep learning in workpiece defect detection",
-        "venue": "Procedia Computer Science 183 · 2021"
       }
     ],
     "skills": [

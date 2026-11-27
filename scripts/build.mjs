@@ -96,8 +96,9 @@ function renderPageChrome(data) {
     ["home", "Home", "首页"],
     ["education", "Education", "教育背景"],
     ["work", "Work Experience", "工作经历"],
-    ["speaking", "Sharing", "分享"],
-    ["background", "Publications & Awards", "论文与奖项"],
+    ["publications", "Publications", "论文"],
+    ["speaking", "Technical Sharing", "技术分享"],
+    ["background", "Awards & Skills", "奖项与技能"],
     ["contact", "Contact", "联系我"],
   ];
 
@@ -281,7 +282,7 @@ function renderWritingItem(item) {
 
 function renderSpeaking(data) {
   return `<section class="section" id="speaking">
-        ${renderSectionHeading({ en: "Sharing", zh: "分享" })}
+        ${renderSectionHeading({ en: "Technical Sharing", zh: "技术分享" })}
         <div class="media-grid">${data.speaking.events.map(renderEvent).join("\n")}</div>
         <div class="writing-list">${data.speaking.writing.map(renderWritingItem).join("\n")}</div>
       </section>`;
@@ -293,7 +294,7 @@ function renderEducation(item) {
 
 function renderPublication(item) {
   const content = `<span class="publication-role">${localizedInline(item.role)}</span>
-              <h4>${escapeHtml(item.title)}</h4><p>${localizedInline(item.venue)}</p>`;
+              <h3>${escapeHtml(item.title)}</h3><p>${localizedInline(item.venue)}</p>`;
   if (!item.url) return `<article class="publication-card">${content}</article>`;
   return `<a class="publication-card" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${content}${externalIcon}</a>`;
 }
@@ -301,16 +302,14 @@ function renderPublication(item) {
 function renderBackground(data) {
   const background = data.background;
   return `<section class="section" id="background">
-        ${renderSectionHeading({ en: "Publications & Awards", zh: "论文与奖项" })}
+        ${renderSectionHeading({ en: "Awards & Skills", zh: "奖项与技能" })}
         <div class="background-grid">
           <div class="background-column reveal">
             <h3 class="subsection-title"><span class="lang-en">Selected Recognition</span><span class="lang-zh">部分奖项</span></h3>
             <ul class="award-list">${background.recognition.map((item) => `<li><strong>${escapeHtml(item.year)}</strong>${localizedInline(item.name)}</li>`).join("")}</ul>
           </div>
           <div class="background-column reveal">
-            <h3 class="subsection-title"><span class="lang-en">Publications</span><span class="lang-zh">论文</span></h3>
-            ${background.publications.map(renderPublication).join("\n            ")}
-            <h3 class="subsection-title subsection-title--spaced"><span class="lang-en">Toolbox</span><span class="lang-zh">技术栈</span></h3>
+            <h3 class="subsection-title"><span class="lang-en">Toolbox</span><span class="lang-zh">技术栈</span></h3>
             <div class="skills-cloud">${background.skills.map((skill) => `<span>${escapeHtml(skill)}</span>`).join("")}</div>
           </div>
         </div>
@@ -347,6 +346,11 @@ function renderBody(data) {
       </section>
 
       ${renderWork(data)}
+
+      <section class="section" id="publications">
+        ${renderSectionHeading({ en: "Publications", zh: "论文" })}
+        ${data.background.publications.map(renderPublication).join("\n        ")}
+      </section>
 
       ${renderSpeaking(data)}
 

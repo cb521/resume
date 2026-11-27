@@ -999,10 +999,6 @@ a.media-card:hover,
   text-transform: uppercase;
 }
 
-.subsection-title--spaced {
-  margin-top: 34px;
-}
-
 .education-card {
   position: relative;
   padding: 20px;
@@ -1016,7 +1012,7 @@ a.media-card:hover,
 }
 
 .education-card h3,
-.publication-card h4 {
+.publication-card h3 {
   margin: 7px 0 3px;
   font-size: 16px;
   font-weight: 600;
