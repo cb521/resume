@@ -94,8 +94,8 @@ function renderPageChrome(data) {
   const status = localizedPair(site.location, " · ", site.availability);
   const navigation = [
     ["home", "Home", "首页"],
-    ["work", "Work Experience", "工作经历"],
     ["education", "Education", "教育背景"],
+    ["work", "Work Experience", "工作经历"],
     ["speaking", "Sharing", "分享"],
     ["background", "Publications & Awards", "论文与奖项"],
     ["contact", "Contact", "联系我"],
@@ -337,12 +337,12 @@ function renderBody(data) {
     <main id="main-content">
       ${renderHero(data)}
 
-      ${renderWork(data)}
-
       <section class="section" id="education">
         ${renderSectionHeading({ en: "Education", zh: "教育背景" })}
         <div class="education-grid reveal">${data.background.education.map(renderEducation).join("\n          ")}</div>
       </section>
+
+      ${renderWork(data)}
 
       ${renderSpeaking(data)}
 
