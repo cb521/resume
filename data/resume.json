@@ -290,8 +290,8 @@
             "zh": "AI 搜索智能体 · RL 后训练端到端优化"
           },
           "description": {
-            "en": "Balanced expert loads and prefetched generated samples. On a simulated Qwen3-Next 80B search task, the prototype trained on the same number of tokens in 36% less time than tuned verl.",
-            "zh": "均衡专家负载、预取生成样本，优化原型在 Qwen3-Next 80B 模拟搜索中的等量训练耗时较 verl 缩短约 36%。"
+            "en": "Identified redundant computation during RL training and synchronization stalls during generation for XHS, proposed fixes for both, and developed a decode megakernel prototype that reduced sparse indexing kernel time by about 42%.",
+            "zh": "定位 XHS 客户在 RL 训练中的重复计算和生成阶段的同步等待，提出对应优化方案，并开发解码 Megakernel 原型，将稀疏索引算子耗时缩短约 42%。"
           },
           "results": [
             {
