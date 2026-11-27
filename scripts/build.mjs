@@ -189,6 +189,7 @@ function renderProjectRole(role) {
 }
 
 function renderWorkCard(project, headingTag) {
+  if (project.summary) return localizedBlock("p", project.summary, "project-summary", { markdown: true });
   return `<article class="work-card${project.featured ? " work-card--featured" : ""} reveal">
             <div class="card-topline"><span>${escapeHtml(project.years)}</span>${renderProjectRole(project.role)}</div>
             <${headingTag} class="work-card-title">${localizedInline(project.title)}</${headingTag}>
@@ -434,6 +435,10 @@ async function validateData(data) {
       const projectLabel = `${label}.projects[${projectIndex}]`;
       if (group.topics) {
         requireValue(Object.hasOwn(group.topics, project.topic), `${projectLabel}.topic must match a listed topic`);
+      }
+      if (group.layout === "grid" && project.summary !== undefined) {
+        requireLocalizedText(project.summary, `${projectLabel}.summary`);
+        return;
       }
       if (project.role !== undefined) requireLocalizedText(project.role, `${projectLabel}.role`);
       requireLocalizedText(project.title, `${projectLabel}.title`);

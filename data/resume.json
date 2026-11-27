@@ -244,36 +244,9 @@
         },
         {
           "topic": "recsys",
-          "years": "2026.11",
-          "role": {
-            "en": "Open-source contributor",
-            "zh": "开源贡献者"
-          },
-          "title": {
-            "en": "Feature-Extractor-Plugin · GPU feature processing for Spark and Flink",
-            "zh": "Feature-Extractor-Plugin · Spark 与 Flink 特征计算"
-          },
-          "description": {
-            "en": "Developed GPU plugins for Spark batch processing and Flink stream processing. Submitted both as cb521 in PR #540, which was merged into NVIDIA/recsys-examples.",
-            "zh": "开发 Spark 批处理和 Flink 流处理的 GPU 插件，以 cb521 账号提交至 NVIDIA/recsys-examples，已合入主分支。"
-          },
-          "results": [
-            {
-              "en": "Fused 27 Spark projection operators into one CUDA kernel. On one L20 with 92.9 million KuaiRand rows, median runtime for a feature query with no disk writes fell from 0.361 s with spark-rapids alone to 0.299 s with fusion.",
-              "zh": "将 Spark 投影中的 27 个算子融合为一个 CUDA kernel。单张 L20 处理 KuaiRand 的 9290 万行数据时，无写盘特征计算用例的耗时中位数从 spark-rapids 基线的 0.361 秒降至 0.299 秒。"
-            },
-            {
-              "en": "Implemented GPU window aggregation and bounded dimension-table INNER lookup joins for Flink DataStream jobs. On one L20, the output tables for both operators matched their CPU counterparts by SHA-256.",
-              "zh": "为 Flink DataStream 实现 GPU 窗口聚合和有界维表 INNER JOIN。在单张 L20 上验证了两类算子的输出，结果表的 SHA-256 校验值均与 CPU 版本一致。"
-            }
-          ],
-          "tags": ["Spark RAPIDS", "Flink DataStream", "CUDA", "JNI"],
-          "link": {
-            "url": "https://github.com/NVIDIA/recsys-examples/pull/540",
-            "label": {
-              "en": "Merged pull request #540",
-              "zh": "查看已合并的 PR #540"
-            }
+          "summary": {
+            "en": "Developed GPU feature-processing plugins for Spark batch jobs and Flink streams, merged into [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540).",
+            "zh": "为 Spark 批处理和 Flink 流处理开发 GPU 特征计算插件，已合入 [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540)。"
           }
         },
         {
