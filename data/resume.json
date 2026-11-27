@@ -290,14 +290,10 @@
             "zh": "AI 搜索智能体 · RL 后训练端到端优化"
           },
           "description": {
-            "en": "Identified uneven MoE expert loads during training and stalls while waiting for generated samples. Proposed expert rebalancing and sample prefetching to improve end-to-end RL post-training efficiency.",
-            "zh": "定位训练中专家负载不均、生成样本供给不及时的问题，提出专家重排与样本预取方案，大幅提升 RL 后训练效率。"
+            "en": "Balanced expert loads and prefetched generated samples. On a simulated Qwen3-Next 80B search task, the prototype trained on the same number of tokens in 36% less time than tuned verl.",
+            "zh": "均衡专家负载、预取生成样本，优化原型在 Qwen3-Next 80B 模拟搜索中的等量训练耗时较 verl 缩短约 36%。"
           },
           "results": [
-            {
-              "en": "In a simulated search benchmark with Qwen3-Next 80B, the optimized prototype took 36% less time than tuned verl to train on the same number of tokens.",
-              "zh": "在 Qwen3-Next 80B 模拟搜索测试中，优化原型完成同等训练量的耗时比调优后的 verl 缩短约 36%。"
-            },
             {
               "en": "Benchmarked decode megakernels for attention, sparse indexing and MoE.",
               "zh": "另实测注意力、稀疏索引和 MoE 解码 megakernel。"
