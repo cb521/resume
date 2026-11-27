@@ -10,8 +10,8 @@
       "en": "Bin Chai — GPU Performance Engineer",
       "zh": "柴斌 — GPU 性能工程师"
     },
-    "description": "Bin Chai is a senior software engineer at NVIDIA with around five years of full-stack experience spanning algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
-    "ogDescription": "Around five years of full-stack experience in algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
+    "description": "Bin Chai is a senior software engineer at NVIDIA with five years of full-stack experience spanning algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
+    "ogDescription": "Five years of full-stack experience in algorithms for search, ads and recommendations, business architecture and shared platforms, and GPU performance optimization and acceleration.",
     "email": "1095135384@qq.com",
     "phone": "+86 13717798912",
     "location": {
@@ -34,8 +34,8 @@
       "zh": "你好，我是柴斌。"
     },
     "lead": {
-      "en": "I have around **five years of full-stack experience**, spanning **algorithms for search, ads and recommendations**, **business architecture and shared platforms**, and **low-level GPU performance optimization and acceleration**. Through my work with major tech companies in China and abroad, I’ve gained extensive experience providing technical support.",
-      "zh": "我有 **5 年左右的全栈工作经验**，涵盖**搜广推算法**、**中层业务架构与中台建设**，以及**底层 GPU 性能优化与加速**；同时，我在与国内外大厂的合作中积累了丰富的技术支持经验。"
+      "en": "I have **five years of full-stack experience**, spanning **algorithms for search, ads and recommendations**, **business architecture and shared platforms**, and **low-level GPU performance optimization and acceleration**. Through my work with major tech companies in China and abroad, I’ve gained extensive experience providing technical support.",
+      "zh": "我有 **5 年的全栈工作经验**，涵盖**搜广推算法**、**中层业务架构与中台建设**，以及**底层 GPU 性能优化与加速**；同时，我在与国内外大厂的合作中积累了丰富的技术支持经验。"
     },
     "intro": [
       {
@@ -313,7 +313,7 @@
           "results": [
             {
               "en": "Researched features for Sports Data Mart, contributed to warehouse schema design, and developed and tested Spark ETL jobs that produced recommendation features for data scientists.",
-              "zh": "在 Sports Data Mart 参与特征调研和数仓设计，开发、测试 Spark ETL 作业，为数据科学团队产出推荐特征。"
+              "zh": "在 Sports Data Mart 参与特征调研和数据仓库设计，开发、测试 Spark ETL 作业，为数据科学团队产出推荐特征。"
             },
             {
               "en": "Developed Lambda services and Python SDK components for Vulcan and refactored its EMR jobs to support feature extraction and model management.",
