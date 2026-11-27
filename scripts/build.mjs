@@ -196,7 +196,7 @@ function renderWorkCard(project, headingTag) {
             <div class="card-topline"><span>${escapeHtml(project.years)}</span>${renderProjectRole(project.role)}</div>
             <${headingTag} class="work-card-title">${localizedInline(project.title)}</${headingTag}>
             ${localizedBlock("p", project.description)}
-            <ul class="result-list">${project.results.map((result) => `<li>${localizedInline(result)}</li>`).join("")}</ul>
+            <ul class="result-list">${project.results.map((result) => `<li>${localizedInline(result, { markdown: true })}</li>`).join("")}</ul>
             <div class="card-footer">${renderTags(project.tags)}${renderWorkLink(project.link)}</div>
           </article>`;
 }

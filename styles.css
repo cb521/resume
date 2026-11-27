@@ -664,7 +664,8 @@ button.text-button {
   line-height: 1.625;
 }
 
-.project-summary a {
+.project-summary a,
+.result-list a {
   text-decoration: underline;
 }
 

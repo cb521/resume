@@ -135,12 +135,12 @@
           },
           "results": [
             {
-              "en": "Delivered industry-leading performance near the hardware speed-of-light (SOL) limit across supported GPU architectures.",
-              "zh": "各卡型实现均达到业界 SOL 性能水平。"
+              "en": "On Hopper, the CUTLASS forward kernel ran in [1.20 ms vs. 4.36 ms for Triton](https://developer-blogs.nvidia.com/zh-cn-blog/wp-content/uploads/sites/2/2025/06/image9.png), a 3.62× speedup at batch 8 and sequence length 8,192 (4 heads, head dimension 128, causal mask and relative attention bias).",
+              "zh": "在 Hopper 上，batch 8、序列长度 8192（4 头、头维 128、因果掩码和相对位置偏置）时，CUTLASS 前向算子耗时 [1.20 ms，Triton 为 4.36 ms](https://developer-blogs.nvidia.com/zh-cn-blog/wp-content/uploads/sites/2/2025/06/image9.png)，加速 3.62 倍。"
             },
             {
-              "en": "Deployed in feed, e-commerce recommendation and advertising workloads.",
-              "zh": "相关工作落地信息流、电商推荐与广告场景。"
+              "en": "Deployed across feed, e-commerce recommendation and advertising. In Meituan's food-delivery recommender, the optimized HSTU operator [increased end-to-end training throughput by 85%](https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/).",
+              "zh": "相关工作落地信息流、电商推荐与广告场景。美团外卖推荐模型接入优化版 HSTU 算子后，[端到端训练吞吐提升 85%](https://developer.nvidia.cn/blog/nvidia-recsys-generative-recommenders-1/)。"
             }
           ],
           "tags": ["FBGEMM", "HSTU", "CUDA", "CUTLASS"],
@@ -169,6 +169,10 @@
           },
           "results": [
             {
+              "en": "In the independent FlashNext-RL benchmark on one B200 at 131K sequence length, cuDNN's fused indexer and Top-K took [22.5 ms vs. 123.8 ms for PyTorch](https://arxiv.org/html/2610.28998v1#S3.T6), a 5.5× speedup.",
+              "zh": "FlashNext-RL 在单张 B200、131K 序列上实测，cuDNN 融合索引与 Top-K 的耗时为 [22.5 ms，PyTorch 为 123.8 ms](https://arxiv.org/html/2610.28998v1#S3.T6)，加速 5.5 倍。"
+            },
+            {
               "en": "Named as a co-developer in the official cuDNN README.",
               "zh": "cuDNN 官方 README 列为共同开发者。"
             }
@@ -195,8 +199,8 @@
           },
           "results": [
             {
-              "en": "Supported the phase-one production rollout.",
-              "zh": "支持 OneRec 一期上线。"
+              "en": "The team tuned tiling and pipelining in the custom backward kernel, reducing its Nsight Compute time [from 5.51 ms to 4.85 ms](https://github.com/cb521/flash-attention/commit/728885858784f9e15f259fe54add9febf0ee5b2d), about 12%. Supported the phase-one production rollout.",
+              "zh": "团队调整定制反向算子的分块和流水线后，Nsight Compute 实测耗时[从 5.51 ms 降至 4.85 ms](https://github.com/cb521/flash-attention/commit/728885858784f9e15f259fe54add9febf0ee5b2d)，缩短约 12%。支持 OneRec 一期上线。"
             },
             {
               "en": "Presented the work at GTC San Jose 2026.",
@@ -225,12 +229,12 @@
           },
           "results": [
             {
-              "en": "Deployed in a core high-throughput search scenario.",
-              "zh": "在百度核心高吞吐搜索场景上线。"
+              "en": "On an index of 25 million 256-dimensional vectors, one serving instance sustained approximately 20,000 top-30 queries per second with millisecond-scale average latency.",
+              "zh": "在 2,500 万条 256 维向量上，单实例 Top-30 检索达到约 2 万 QPS，平均延迟为毫秒级。"
             },
             {
-              "en": "Delivered material performance and infrastructure savings.",
-              "zh": "取得显著性能与资源成本收益。"
+              "en": "In Baidu's high-traffic deployments, resource costs fell 30–50% relative to the CPU solution.",
+              "zh": "在百度高流量检索场景上线后，资源成本较 CPU 方案降低 30%–50%。"
             }
           ],
           "tags": ["RAFT", "IVF", "INT8"],
@@ -249,8 +253,8 @@
             "zh": "Spark 与 Flink 特征计算"
           },
           "summary": {
-            "en": "Developed GPU plugins for batch and stream processing, merged into [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540).",
-            "zh": "开发批处理和流处理的 GPU 插件，已合入 [NVIDIA/recsys-examples](https://github.com/NVIDIA/recsys-examples/pull/540)。"
+            "en": "In KuaiRand tests on one L20, my [GPU plugins for Spark and Flink](https://github.com/NVIDIA/recsys-examples/pull/540) cut a no-write Spark feature query from [361 ms with RAPIDS to 299 ms](https://github.com/NVIDIA/recsys-examples/blob/b085012/examples/Feature-Extractor-Plugin/batch/benchmarks/kuairand/README.md) and brought a saturated Flink lookup join to [1.39× the CPU throughput](https://github.com/NVIDIA/recsys-examples/blob/b085012/examples/Feature-Extractor-Plugin/streaming/benchmarks/group1-gpu-wins.md#c6-lookup).",
+            "zh": "开发[批流 GPU 插件](https://github.com/NVIDIA/recsys-examples/pull/540)，在单张 L20 的 KuaiRand 测试中，Spark 无写盘特征查询由 RAPIDS 基线的 [361 ms 降至 299 ms](https://github.com/NVIDIA/recsys-examples/blob/b085012/examples/Feature-Extractor-Plugin/batch/benchmarks/kuairand/README.md)，Flink 维表关联在饱和输入下的吞吐为 [CPU 的 1.39 倍](https://github.com/NVIDIA/recsys-examples/blob/b085012/examples/Feature-Extractor-Plugin/streaming/benchmarks/group1-gpu-wins.md#c6-lookup)。"
           }
         },
         {
