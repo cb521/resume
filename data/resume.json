@@ -194,13 +194,13 @@
             "zh": "OneRec 端到端训练优化"
           },
           "description": {
-            "en": "Optimized customized FlashAttention-2 backward kernels with CUTLASS and profiled the distributed training path for Kuaishou's production generative recommender.",
-            "zh": "结合客户定制化参数，使用 CUTLASS 优化 FlashAttention-2 反向 Kernel，并完成分布式训练链路分析与优化。"
+            "en": "Tuned cross-attention for OneRec's short queries (Q length ≤16) by adjusting forward tiling and reordering the backward computation to reduce atomic adds. Helped optimize distributed training for the initial production rollout.",
+            "zh": "针对 OneRec 的短查询（Q 长度 ≤16），调整交叉注意力的前向分块，重排反向计算以减少原子加操作。参与分布式训练优化，支持一期上线。"
           },
           "results": [
             {
-              "en": "The team tuned tiling and pipelining in the custom backward kernel, reducing its Nsight Compute time [from 5.51 ms to 4.85 ms](https://github.com/cb521/flash-attention/commit/728885858784f9e15f259fe54add9febf0ee5b2d), about 12%. Supported the phase-one production rollout.",
-              "zh": "团队调整定制反向算子的分块和流水线后，Nsight Compute 实测耗时[从 5.51 ms 降至 4.85 ms](https://github.com/cb521/flash-attention/commit/728885858784f9e15f259fe54add9febf0ee5b2d)，缩短约 12%。支持 OneRec 一期上线。"
+              "en": "Compared with the original FlashAttention-2, cross-attention ran 1.75× faster forward and 1.33× faster backward on Ampere. On Hopper, the speedups were 2.42× forward and 1.95× backward. [GTC benchmark](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)",
+              "zh": "与原版 FlashAttention-2 相比，Ampere 上前向、反向分别加速 1.75 倍和 1.33 倍，Hopper 上分别加速 2.42 倍和 1.95 倍。[GTC 实测图](https://cfvod.kaltura.com/p/2935771/thumbnail/entry_id/1_gdlmnoc7/width/1280/vid_sec/2050)"
             },
             {
               "en": "Presented the work at GTC San Jose 2026.",
@@ -209,7 +209,7 @@
           ],
           "tags": ["CUTLASS", "FA2", "Distributed training"],
           "link": {
-            "url": "https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s81984/",
+            "url": "https://www.nvidia.com/en-us/on-demand/session/gtc26-s81984/",
             "label": {
               "en": "GTC session",
               "zh": "GTC 演讲"
