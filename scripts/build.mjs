@@ -288,7 +288,7 @@ function renderEducation(item) {
 
 function renderPublication(item) {
   const content = `<span class="publication-role">${localizedInline(item.role)}</span>
-              <h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.venue)}</p>`;
+              <h4>${escapeHtml(item.title)}</h4><p>${localizedInline(item.venue)}</p>`;
   if (!item.url) return `<article class="publication-card">${content}</article>`;
   return `<a class="publication-card" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${content}${externalIcon}</a>`;
 }
@@ -480,7 +480,7 @@ async function validateData(data) {
     if (item.url !== undefined) requireUrl(item.url, `background.publications[${index}].url`);
     requireLocalizedText(item.role, `background.publications[${index}].role`);
     requireText(item.title, `background.publications[${index}].title`);
-    requireText(item.venue, `background.publications[${index}].venue`);
+    requireLocalizedText(item.venue, `background.publications[${index}].venue`);
   });
   data.background.skills.forEach((skill, index) => requireText(skill, `background.skills[${index}]`));
   requireLocalizedText(data.contact?.title, "contact.title");
